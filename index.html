@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Teacher Adilson | Aulas de Inglês</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #FFFBF5;
+      --navy: #1A1A2E;
+      --navy-light: #252540;
+      --terracotta: #E85D3A;
+      --terracotta-dark: #C94E30;
+      --green-wpp: #25D366;
+      --green-wpp-dark: #1DA851;
+      --gold: #F5C842;
+      --text-dark: #2D2D3A;
+      --text-muted: #6B6B7B;
+      --text-light: #F5F0E8;
+      --border-light: #E8E0D4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      line-height: 1.2;
+    }
+
+    .container-lp {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .nav-lp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 251, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 14px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--terracotta); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-wpp);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-wpp-dark);
+      transform: scale(1.03);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        url('https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/hero-bg-NiAHMjFw746hYHJucf97Wv.webp') center/cover no-repeat,
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,26,46,0.88) 0%, rgba(26,26,46,0.65) 50%, rgba(26,26,46,0.45) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 60px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 200, 66, 0.15);
+      border: 1px solid rgba(245, 200, 66, 0.3);
+      color: var(--gold);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight { color: var(--terracotta); }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green-wpp);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+      animation: pulse-glow 2s infinite;
+    }
+
+    .hero-cta:hover {
+      background: var(--green-wpp-dark);
+      transform: scale(1.04);
+    }
+
+    .hero-sub {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .stats-bar {
+      background: var(--navy);
+      padding: 40px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.6rem;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    .pain-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--terracotta);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 50px;
+    }
+
+    .pain-intro-image {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      max-height: 340px;
+      position: relative;
+    }
+
+    .pain-intro-image img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pain-intro-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(45,45,58,0.55) 0%, transparent 60%);
+      border-radius: 20px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .pain-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--terracotta);
+      border-radius: 16px 0 0 16px;
+    }
+
+    .pain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .pain-emoji {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pain-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .pain-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .salary-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--navy) 0%, #252545 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .salary-visual {
+      margin-top: 48px;
+      border-radius: 16px;
+      overflow: hidden;
+      max-height: 260px;
+      position: relative;
+    }
+
+    .salary-visual img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.55;
+    }
+
+    .salary-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,26,46,0.7) 0%, rgba(232,93,58,0.15) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .salary-visual-text {
+      color: #fff;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      text-align: center;
+      padding: 0 24px;
+      line-height: 1.3;
+    }
+
+    .salary-visual-text span { color: var(--gold); }
+
+    .salary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .salary-card {
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .salary-card.without {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .salary-card.with {
+      background: linear-gradient(135deg, rgba(232,93,58,0.15), rgba(245,200,66,0.1));
+      border: 2px solid var(--terracotta);
+    }
+
+    .salary-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .salary-card.without .salary-label { color: rgba(255,255,255,0.4); }
+    .salary-card.with .salary-label { color: var(--gold); }
+
+    .salary-role {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .salary-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .salary-card.without .salary-value { color: rgba(255,255,255,0.5); }
+    .salary-card.with .salary-value { color: var(--terracotta); }
+
+    .solution-section {
+      padding: 100px 0;
+      background: var(--navy);
+      position: relative;
+    }
+
+    .solution-section .section-label { color: var(--gold); }
+    .solution-section .section-title { color: #fff; }
+    .solution-section .section-subtitle { color: rgba(255,255,255,0.6); }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .method-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .method-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .method-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--terracotta);
+      color: #fff;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .step h4 {
+      font-family: 'DM Sans', sans-serif;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.92rem;
+    }
+
+    .benefits-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    }
+
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--terracotta), #F08060);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.6rem;
+    }
+
+    .benefit-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .about-section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--terracotta);
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 24px rgba(232,93,58,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .about-tag {
+      background: rgba(232,93,58,0.08);
+      color: var(--terracotta);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .testimonials-section {
+      padding: 100px 0;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .testimonials-banner {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 56px;
+      max-height: 220px;
+      position: relative;
+    }
+
+    .testimonials-banner img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonials-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,26,46,0.72) 0%, rgba(232,93,58,0.25) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .testimonials-banner-overlay p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+    }
+
+    .testimonials-banner-overlay strong {
+      color: #fff;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      color: var(--terracotta);
+      opacity: 0.2;
+      position: absolute;
+      top: 12px;
+      left: 24px;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .faq-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(232,93,58,0.1);
+      color: var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 24px;
+    }
+
+    .final-cta {
+      padding: 100px 0;
+      background: var(--navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(232,93,58,0.08) 0%, transparent 50%);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .final-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--green-wpp);
+      color: #fff;
+      padding: 18px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      transition: background 0.3s, transform 0.2s;
+      animation: pulse-glow 2s infinite;
+      position: relative;
+    }
+
+    .final-cta-btn:hover {
+      background: var(--green-wpp-dark);
+      transform: scale(1.04);
+    }
+
+    .final-cta-sub {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      position: relative;
+    }
+
+    .footer-lp {
+      background: #111122;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-lp p {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.85rem;
+    }
+
+    .footer-lp a {
+      color: var(--terracotta);
+      text-decoration: none;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background: var(--green-wpp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulse-glow 2s infinite;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-image { order: -1; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .salary-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { max-width: 400px; margin: 0 auto; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-item h3 { font-size: 2rem; }
+      .hero-content { padding: 40px 0; }
+      .nav-cta span { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav-lp">
+    <div class="container-lp nav-inner">
+      <a href="#" class="nav-logo">Teacher <span>Adilson</span></a>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs." class="nav-cta" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+        <span>Agendar Aula Gratis</span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container-lp hero-content">
+      <div class="hero-badge">+8 Anos de Experiencia</div>
+      <h1>Aprenda ingles para <span class="highlight">conquistar a vaga</span> que voce merece</h1>
+      <p>Aulas particulares focadas em Business English e preparacao para entrevistas de emprego. Do zero ao profissional, no seu ritmo e sem julgamento.</p>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20aula%20experimental%20gratuita." class="hero-cta" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+        Agendar Aula Gratis
+      </a>
+      <p class="hero-sub">Sem compromisso. Primeira aula 100% gratuita.</p>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container-lp">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <h3 data-count="8" data-suffix="+">0</h3>
+          <p>Anos de experiencia</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3 data-count="200" data-suffix="+">0</h3>
+          <p>Alunos transformados</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3 data-count="95" data-suffix="%">0</h3>
+          <p>Taxa de satisfacao</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3 data-count="200" data-suffix="%">0</h3>
+          <p>Aumento salarial medio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain-section" id="dores">
+    <div class="container-lp">
+      <span class="section-label fade-in">Voce se identifica?</span>
+      <h2 class="section-title fade-in">O ingles esta <span style="color:var(--terracotta)">travando</span> sua carreira?</h2>
+      <p class="section-subtitle fade-in">Se alguma dessas situacoes parece familiar, saiba que voce nao esta sozinho e que isso tem solucao.</p>
+
+      <div class="pain-intro-image fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=1200&q=80&auto=format&fit=crop"
+          alt="Profissional em reuniao online sentindo dificuldade com ingles"
+        />
+        <div class="pain-intro-image-overlay"></div>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card fade-in">
+          <span class="pain-emoji">&#128552;</span>
+          <h4>Call em ingles no trabalho</h4>
+          <p>Seu chefe pede pra voce atender uma call em ingles e voce finge que a internet caiu. A vergonha paralisa.</p>
+        </div>
+        <div class="pain-card fade-in">
+          <span class="pain-emoji">&#128542;</span>
+          <h4>Vaga dos sonhos: "English required"</h4>
+          <p>Aparece aquela vaga perfeita, mas pede ingles. Voce nem se candidata e ve a oportunidade passar.</p>
+        </div>
+        <div class="pain-card fade-in">
+          <span class="pain-emoji">&#128532;</span>
+          <h4>Viagem internacional</h4>
+          <p>Seus amigos viajam para o exterior e voce fica com medo de nao conseguir se comunicar em nada.</p>
+        </div>
+        <div class="pain-card fade-in">
+          <span class="pain-emoji">&#128148;</span>
+          <h4>Seu filho pede ajuda</h4>
+          <p>Seu filho pede ajuda no dever de ingles e voce nao consegue ajudar. A frustracao e enorme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="salary-section">
+    <div class="container-lp" style="text-align:center;">
+      <span class="section-label fade-in" style="color:var(--gold);">O custo de nao falar ingles</span>
+      <h2 class="section-title fade-in" style="color:#fff;">Quanto voce esta <span style="color:var(--terracotta)">deixando de ganhar</span>?</h2>
+      <p class="section-subtitle fade-in" style="color:rgba(255,255,255,0.6); margin: 0 auto 10px;">Profissionais com ingles ganham em media 200% a mais, segundo pesquisas do mercado de trabalho brasileiro.</p>
+      <div class="salary-grid">
+        <div class="salary-card without fade-in">
+          <div class="salary-label">Sem ingles</div>
+          <p class="salary-role">Analista de Marketing</p>
+          <p class="salary-value">R$ 4.200</p>
+          <p class="salary-role">Suporte Tecnico</p>
+          <p class="salary-value">R$ 2.800</p>
+          <p class="salary-role">Assistente Administrativo</p>
+          <p class="salary-value">R$ 2.500</p>
+        </div>
+        <div class="salary-card with fade-in">
+          <div class="salary-label">Com ingles</div>
+          <p class="salary-role">Marketing Analyst</p>
+          <p class="salary-value">R$ 12.500</p>
+          <p class="salary-role">Customer Success</p>
+          <p class="salary-value">R$ 9.800</p>
+          <p class="salary-role">Executive Assistant</p>
+          <p class="salary-value">R$ 8.200</p>
+        </div>
+      </div>
+
+      <div class="salary-visual fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&auto=format&fit=crop"
+          alt="Profissional de sucesso em ambiente corporativo internacional"
+        />
+        <div class="salary-visual-overlay">
+          <p class="salary-visual-text">O ingles e o idioma que <span>multiplica sua renda</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="solution-section" id="metodo">
+    <div class="container-lp">
+      <span class="section-label fade-in">Meu metodo</span>
+      <h2 class="section-title fade-in">Como funciona o <span style="color:var(--terracotta)">metodo</span></h2>
+      <p class="section-subtitle fade-in">Um processo simples, direto e personalizado para voce sair do zero ao profissional.</p>
+      <div class="method-grid">
+        <div class="method-image fade-in">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/study-aesthetic-5C2WUeAWACH3zzM2XqWzDT.webp"
+            onerror="this.src='https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80&auto=format&fit=crop'"
+            alt="Aula de ingles online"
+          />
+        </div>
+        <div class="method-steps">
+          <div class="step fade-in">
+            <div class="step-number">1</div>
+            <div>
+              <h4>Diagnostico Gratuito</h4>
+              <p>Na primeira aula, avalio seu nivel real, seus objetivos e monto um plano 100% personalizado para voce.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">2</div>
+            <div>
+              <h4>Aulas Praticas e Contextualizadas</h4>
+              <p>Nada de decorar regras. Voce aprende ingles real, usado em reunioes, e-mails, entrevistas e apresentacoes.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">3</div>
+            <div>
+              <h4>Simulacoes Reais</h4>
+              <p>Praticamos situacoes reais do seu dia a dia profissional: mock interviews, role plays e conversacao livre.</p>
+            </div>
+          </div>
+          <div class="step fade-in">
+            <div class="step-number">4</div>
+            <div>
+              <h4>Acompanhamento Continuo</h4>
+              <p>Suporte via WhatsApp entre as aulas para tirar duvidas, corrigir textos e manter o ritmo de evolucao.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits-section" id="beneficios">
+    <div class="container-lp" style="text-align:center;">
+      <span class="section-label fade-in">Por que me escolher</span>
+      <h2 class="section-title fade-in">Vantagens de ter um <span style="color:var(--terracotta)">professor particular</span></h2>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Diferente de escolas genericas, aqui tudo e feito sob medida para o seu objetivo.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#127919;</div>
+          <h4>100% Personalizado</h4>
+          <p>Cada aula e planejada para o SEU objetivo: entrevista, promocao, viagem ou certificacao.</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#128336;</div>
+          <h4>Horarios Flexiveis</h4>
+          <p>Manha, tarde ou noite. Voce escolhe o melhor horario para a sua rotina, inclusive fins de semana.</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#128187;</div>
+          <h4>100% Online</h4>
+          <p>Aulas ao vivo por videochamada. Estude de onde estiver, sem perder tempo com deslocamento.</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#128172;</div>
+          <h4>Suporte no WhatsApp</h4>
+          <p>Tire duvidas entre as aulas, envie textos para correcao e mantenha o ingles ativo todos os dias.</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#128200;</div>
+          <h4>Evolucao Visivel</h4>
+          <p>Relatorios mensais de progresso para voce ver exatamente o quanto evoluiu.</p>
+        </div>
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">&#129309;</div>
+          <h4>Sem Julgamento</h4>
+          <p>Ambiente seguro para errar, perguntar e crescer. Aqui ninguem ri do seu ingles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="sobre">
+    <div class="container-lp">
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/interview-scene-VgDvnCdiJR9cYmjj8Bdg5s.webp"
+            onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop'"
+            alt="Ambiente profissional de entrevista"
+          />
+          <div class="about-badge-float">+8 anos</div>
+        </div>
+        <div class="about-content fade-in">
+          <span class="section-label">Sobre mim</span>
+          <h2>Teacher Adilson</h2>
+          <p>Sou professor de ingles ha mais de 8 anos, especializado em Business English e preparacao para entrevistas de emprego em multinacionais.</p>
+          <p>Minha missao e ajudar profissionais brasileiros a destravar o ingles e conquistar as oportunidades que merecem, sem vergonha, sem pressao e no ritmo de cada um.</p>
+          <p>Ja ajudei mais de 200 alunos a conquistarem vagas em empresas como Google, Amazon, Nubank e diversas multinacionais.</p>
+          <div class="about-tags">
+            <span class="about-tag">Business English</span>
+            <span class="about-tag">Job Interviews</span>
+            <span class="about-tag">Conversacao</span>
+            <span class="about-tag">Ingles do Zero</span>
+            <span class="about-tag">Apresentacoes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="depoimentos">
+    <div class="container-lp" style="text-align:center;">
+      <span class="section-label fade-in">Depoimentos</span>
+      <h2 class="section-title fade-in">O que meus alunos <span style="color:var(--terracotta)">dizem</span></h2>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Historias reais de pessoas que transformaram suas carreiras com ingles.</p>
+
+      <div class="testimonials-banner fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80&auto=format&fit=crop"
+          alt="Alunos celebrando conquistas profissionais"
+        />
+        <div class="testimonials-banner-overlay">
+          <strong>Mais de 200 vidas transformadas</strong>
+          <p>Veja o que nossos alunos conquistaram</p>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Em 6 meses com o Teacher Adilson, passei na entrevista em ingles e consegui a vaga de Marketing Analyst em uma multinacional. Mudou minha vida!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CA</div>
+            <div>
+              <div class="testimonial-name">Camila A.</div>
+              <div class="testimonial-role">Marketing Analyst</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Eu tinha vergonha ate de falar 'hello'. Hoje faco calls em ingles toda semana no trabalho. O metodo do Adilson e incrivel!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RL</div>
+            <div>
+              <div class="testimonial-name">Rafael L.</div>
+              <div class="testimonial-role">Analista de TI</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Tentei escola de ingles 3 vezes e desisti. Com aula particular, finalmente consegui evoluir. Em 4 meses ja estava assistindo series sem legenda!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JS</div>
+            <div>
+              <div class="testimonial-name">Juliana S.</div>
+              <div class="testimonial-role">Gerente Comercial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container-lp" style="text-align:center;">
+      <span class="section-label fade-in">Duvidas frequentes</span>
+      <h2 class="section-title fade-in">Perguntas <span style="color:var(--terracotta)">frequentes</span></h2>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Tudo que voce precisa saber antes de comecar.</p>
+      <div class="faq-list" style="text-align:left;">
+        <div class="faq-item">
+          <button class="faq-question">
+            Nunca estudei ingles. Posso comecar do zero?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Sim! A maioria dos meus alunos comeca do zero absoluto. O metodo e pensado justamente para quem nunca teve contato com o ingles antes.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Quanto custa a aula?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Os valores variam conforme o pacote escolhido (aulas avulsas ou mensalidade). A primeira aula e 100% gratuita e sem compromisso. Entre em contato para saber mais.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            As aulas sao online ou presenciais?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Todas as aulas sao 100% online, ao vivo por videochamada (Google Meet ou Zoom). Voce pode estudar de qualquer lugar, de casa, do trabalho ou de onde estiver.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Quanto tempo leva para ver resultados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Com dedicacao de 2-3 aulas por semana, a maioria dos alunos ja percebe evolucao significativa em 2-3 meses. Em 6 meses, muitos ja estao prontos para entrevistas em ingles.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            E se eu nao gostar da primeira aula?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Sem problema nenhum! A primeira aula e gratuita justamente para voce conhecer o metodo e ver se faz sentido para voce. Zero compromisso.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container-lp">
+      <h2 class="fade-in">Pronto para <span style="color:var(--terracotta)">transformar</span> sua carreira?</h2>
+      <p class="fade-in">Agende sua aula experimental gratuita agora e de o primeiro passo.</p>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20aula%20experimental%20gratuita." class="final-cta-btn" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+        Quero Minha Aula Gratis
+      </a>
+      <p class="final-cta-sub fade-in">Sem compromisso. Sem cartao. Sem vergonha.</p>
+    </div>
+  </section>
+
+  <footer class="footer-lp">
+    <div class="container-lp">
+      <p>Teacher Adilson &copy; 2025 &mdash; Todos os direitos reservados</p>
+      <p style="margin-top:8px;"><a href="https://instagram.com/adilson_holandez" target="_blank" rel="noopener">@adilson_holandez</a></p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20saber%20mais%20sobre%20as%20aulas." class="whatsapp-float" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var target = parseInt(el.getAttribute('data-count') || '0');
+            var suffix = el.getAttribute('data-suffix') || '';
+            var current = 0;
+            var increment = target / 60;
+            var timer = setInterval(function () {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.textContent = Math.floor(current) + suffix;
+            }, 20);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('[data-count]').forEach(function (el) {
+        counterObserver.observe(el);
+      });
+
+      document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(function (i) {
+            i.classList.remove('open');
+          });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          var href = anchor.getAttribute('href');
+          if (href) {
+            var target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>
