@@ -192,8 +192,25 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     .hero p {
       font-size: 1.15rem;
       color: rgba(255,255,255,0.8);
-      margin-bottom: 36px;
+      margin-bottom: 24px;
       max-width: 540px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-meta-divider {
+      color: rgba(255,255,255,0.3);
+      font-weight: 400;
     }
 
     .hero-cta {
@@ -739,6 +756,152 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       letter-spacing: 2px;
     }
 
+    .pricing-section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .pricing-card {
+      background: linear-gradient(135deg, var(--navy) 0%, #252545 100%);
+      border-radius: 20px;
+      padding: 44px;
+      color: #fff;
+      max-width: 620px;
+      margin: 0 auto 64px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,26,46,0.18);
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      background: rgba(245, 200, 66, 0.15);
+      border: 1px solid rgba(245, 200, 66, 0.3);
+      color: var(--gold);
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+
+    .pricing-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-price .value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
+      color: var(--terracotta);
+    }
+
+    .pricing-price .unit {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+    }
+
+    .pricing-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .pricing-list li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .pricing-list li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .pricing-bonus {
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .pricing-limited {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .plans-subtitle {
+      text-align: center;
+      color: var(--navy);
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .plans-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .plan-card {
+      background: var(--cream);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .plan-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .plan-card .plan-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .plan-card .plan-freq {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .plans-footer-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 28px;
+    }
+
     .faq-section {
       padding: 100px 0;
       background: var(--cream);
@@ -915,8 +1078,10 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       .testimonials-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-image { max-width: 400px; margin: 0 auto; }
+      .plan-grid { grid-template-columns: 1fr; }
+      .pricing-card { padding: 32px 24px; }
       .pain-section, .salary-section, .solution-section, .benefits-section,
-      .about-section, .testimonials-section, .faq-section, .final-cta {
+      .about-section, .testimonials-section, .pricing-section, .faq-section, .final-cta {
         padding: 64px 0;
       }
     }
@@ -952,9 +1117,9 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
   <nav class="nav-lp">
     <div class="container-lp nav-inner">
       <a href="#" class="nav-logo">Teacher <span>Adilson</span></a>
-      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20saber%20mais%20sobre%20as%20aulas%20de%20ingl%C3%AAs." class="nav-cta" target="_blank" rel="noopener">
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        <span>Agendar Aula</span>
+        <span>Aplicar para Sessão</span>
       </a>
     </div>
   </nav>
@@ -963,14 +1128,21 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="container-lp hero-content">
-      <div class="hero-badge">+8 Anos de Experiencia</div>
-      <h1>Aprenda ingles para <span class="highlight">conquistar a vaga</span> que voce merece</h1>
-      <p>Aulas particulares focadas em Business English e preparacao para entrevistas de emprego. Do zero ao profissional, no seu ritmo e sem julgamento.</p>
-      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20aula%20experimental." class="hero-cta" target="_blank" rel="noopener">
+      <div class="hero-badge">Diagnóstico 1-a-1 para Profissionais</div>
+      <h1>Aplicar para <span class="highlight">Sessão Estratégica</span></h1>
+      <p>Descubra em 60min o que te trava no inglês de entrevista e saia com um plano para destravar sua promoção.</p>
+      <div class="hero-meta">
+        <span>Investimento: R$29</span>
+        <span class="hero-meta-divider">|</span>
+        <span>60min Online</span>
+        <span class="hero-meta-divider">|</span>
+        <span>Vagas: 8 por semana</span>
+      </div>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="hero-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        Agendar Aula
+        Aplicar para Diagnóstico R$29
       </a>
-      <p class="hero-sub">Sem compromisso. Primeira aula com diagnostico personalizado.</p>
+      <p class="hero-sub">Se virar meu aluno em 7 dias, desconto os R$29 da 1ª mensalidade.</p>
     </div>
   </section>
 
@@ -1092,8 +1264,8 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
           <div class="step fade-in">
             <div class="step-number">1</div>
             <div>
-              <h4>Diagnostico Inicial</h4>
-              <p>Na primeira aula, avalio seu nivel real, seus objetivos e monto um plano 100% personalizado para voce.</p>
+              <h4>Sessão Estratégica R$29</h4>
+              <p>Você aplica e investe R$29 para agendar seu diagnóstico individual de 60min. Avalio seu nível real em simulação de entrevista, mapeio seus 3 bloqueios principais e entrego seu Plano de 90 Dias personalizado. Se matricular em até 7 dias, abato os R$29 da mensalidade.</p>
             </div>
           </div>
           <div class="step fade-in">
@@ -1208,6 +1380,8 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
         </div>
       </div>
 
+      <p class="fade-in" style="color:var(--text-muted); font-weight:700; margin-bottom:24px;">Alunos que fizeram a Sessão Estratégica e transformaram a carreira:</p>
+
       <div class="testimonials-grid">
         <div class="testimonial-card fade-in">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -1246,6 +1420,52 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <section class="pricing-section" id="investimento">
+    <div class="container-lp" style="text-align:center;">
+      <span class="section-label fade-in">Investimento</span>
+      <h2 class="section-title fade-in">Transparência total <span style="color:var(--terracotta)">antes de aplicar</span></h2>
+
+      <div class="pricing-card fade-in" style="text-align:left;">
+        <span class="pricing-badge">Porta de entrada</span>
+        <h3>Sessão Estratégica Individual</h3>
+        <div class="pricing-price">
+          <span class="value">R$29</span>
+          <span class="unit">| 60 minutos online</span>
+        </div>
+        <ul class="pricing-list">
+          <li>Diagnóstico de nível</li>
+          <li>Mapeamento de bloqueios</li>
+          <li>Plano de 90 dias</li>
+          <li>Mini-aula prática</li>
+        </ul>
+        <p class="pricing-bonus">Bônus: Gravação da sessão</p>
+        <p class="pricing-limited">Vagas limitadas — 8 por semana</p>
+      </div>
+
+      <h3 class="plans-subtitle fade-in">Planos mensais</h3>
+      <p class="plans-note fade-in">Disponíveis após a Sessão Estratégica</p>
+
+      <div class="plan-grid fade-in">
+        <div class="plan-card">
+          <h4>Starter</h4>
+          <div class="plan-price">R$197<span style="font-size:1rem;">/mês</span></div>
+          <p class="plan-freq">1 aula de 60min/semana</p>
+        </div>
+        <div class="plan-card">
+          <h4>Fluência</h4>
+          <div class="plan-price">R$347<span style="font-size:1rem;">/mês</span></div>
+          <p class="plan-freq">2 aulas de 60min/semana</p>
+        </div>
+        <div class="plan-card">
+          <h4>Imersão</h4>
+          <div class="plan-price">R$477<span style="font-size:1rem;">/mês</span></div>
+          <p class="plan-freq">3 aulas de 60min/semana</p>
+        </div>
+      </div>
+      <p class="plans-footer-note fade-in">Sem fidelidade. Sem taxa de matrícula.</p>
+    </div>
+  </section>
+
   <section class="faq-section" id="faq">
     <div class="container-lp" style="text-align:center;">
       <span class="section-label fade-in">Duvidas frequentes</span>
@@ -1261,10 +1481,17 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Quanto custa a aula?
+            Quanto custa a Sessão Estratégica?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Os valores variam conforme o pacote escolhido (aulas avulsas ou mensalidade). Entre em contato para saber mais e agendar sua aula experimental.</div>
+          <div class="faq-answer">A Sessão Estratégica tem investimento único de R$29. São 60 minutos individuais comigo para diagnóstico completo + plano personalizado. Se você se matricular em um dos planos em até 7 dias, desconto os R$29 da sua primeira mensalidade.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Por que a sessão não é gratuita?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Porque dedico 1 hora 100% focada em você para preparar e executar seu diagnóstico. O valor de R$29 funciona como filtro para atender apenas adultos comprometidos com resultado. Isso me permite dar atenção máxima e entregar um plano que realmente funciona.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
@@ -1282,10 +1509,10 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            E se eu nao gostar da primeira aula?
+            E se eu não gostar da Sessão Estratégica?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Sem problema nenhum! A primeira aula e experimental justamente para voce conhecer o metodo e ver se faz sentido para voce. Zero compromisso.</div>
+          <div class="faq-answer">A sessão é um serviço de diagnóstico profissional e não possui reembolso. Em 8 anos, 98% dos alunos avaliam como transformadora. Você sai com clareza total do seu próximo passo, mesmo que decida não continuar.</div>
         </div>
       </div>
     </div>
@@ -1293,13 +1520,13 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 
   <section class="final-cta">
     <div class="container-lp">
-      <h2 class="fade-in">Pronto para <span style="color:var(--terracotta)">transformar</span> sua carreira?</h2>
-      <p class="fade-in">Agende sua aula experimental agora e de o primeiro passo.</p>
-      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20agendar%20minha%20aula%20experimental." class="final-cta-btn" target="_blank" rel="noopener">
+      <h2 class="fade-in">Pronto para <span style="color:var(--terracotta)">destravar</span> seu inglês profissional?</h2>
+      <p class="fade-in">Aplique para a Sessão Estratégica e receba seu plano personalizado em 60min.</p>
+      <a href="https://wa.me/5511919591579?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="final-cta-btn" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        Quero Minha Aula
+        Aplicar para Diagnóstico R$29
       </a>
-      <p class="final-cta-sub fade-in">Sem compromisso. Sem cartao. Sem vergonha.</p>
+      <p class="final-cta-sub fade-in">Vagas: 8 por semana | Se virar aluno, desconto na mensalidade.</p>
     </div>
   </section>
 
@@ -1310,7 +1537,7 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     </div>
   </footer>
 
-  <a href="https://wa.me/5511919591579?text=Ol%C3%A1%20Teacher%20Adilson!%20Quero%20saber%20mais%20sobre%20as%20aulas." class="whatsapp-float" target="_blank" rel="noopener">
+  <a href="https://wa.me/5511919591579?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="whatsapp-float" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
   </a>
 
