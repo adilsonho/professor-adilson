@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <title>Teacher Adilson | Aulas de Inglês</title>
+  <!-- LOFI: título trocado — "Aulas de Inglês" (genérico) vira posicionamento Tech English -->
+  <title>Teacher Adilson | Pare de Travar em Call - Tech English</title>
 
     <!-- Meta Pixel Code -->
 <script>
@@ -22,7 +23,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
- 
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -150,9 +151,9 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     .hero-bg {
       position: absolute;
       inset: 0;
+      /* LOFI: imagem de escritório genérico trocada por setup de dev (código na tela, dark mode) */
       background:
-        url('https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/hero-bg-NiAHMjFw746hYHJucf97Wv.webp') center/cover no-repeat,
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
     }
 
     .hero-overlay {
@@ -196,21 +197,12 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       max-width: 540px;
     }
 
-    .hero-meta {
+    /* LOFI: bloco de preço/vagas (R$29, 60min, 8 vagas por semana) removido — sem escassez artificial */
+    .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-      letter-spacing: 0.3px;
-    }
-
-    .hero-meta-divider {
-      color: rgba(255,255,255,0.3);
-      font-weight: 400;
+      gap: 16px;
+      margin-top: 8px;
     }
 
     .hero-cta {
@@ -233,6 +225,17 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       transform: scale(1.04);
     }
 
+    .hero-cta-outline {
+      background: transparent;
+      border: 2px solid var(--green-wpp);
+      color: #fff;
+      animation: none;
+    }
+
+    .hero-cta-outline:hover {
+      background: rgba(37,211,102,0.15);
+    }
+
     .hero-sub {
       margin-top: 14px;
       font-size: 0.85rem;
@@ -246,7 +249,7 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       text-align: center;
     }
@@ -364,97 +367,7 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       font-size: 0.95rem;
     }
 
-    .salary-section {
-      padding: 80px 0;
-      background: linear-gradient(135deg, var(--navy) 0%, #252545 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .salary-visual {
-      margin-top: 48px;
-      border-radius: 16px;
-      overflow: hidden;
-      max-height: 260px;
-      position: relative;
-    }
-
-    .salary-visual img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      opacity: 0.55;
-    }
-
-    .salary-visual-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(26,26,46,0.7) 0%, rgba(232,93,58,0.15) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .salary-visual-text {
-      color: #fff;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      text-align: center;
-      padding: 0 24px;
-      line-height: 1.3;
-    }
-
-    .salary-visual-text span { color: var(--gold); }
-
-    .salary-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 40px;
-    }
-
-    .salary-card {
-      border-radius: 16px;
-      padding: 32px;
-      text-align: center;
-    }
-
-    .salary-card.without {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .salary-card.with {
-      background: linear-gradient(135deg, rgba(232,93,58,0.15), rgba(245,200,66,0.1));
-      border: 2px solid var(--terracotta);
-    }
-
-    .salary-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    .salary-card.without .salary-label { color: rgba(255,255,255,0.4); }
-    .salary-card.with .salary-label { color: var(--gold); }
-
-    .salary-role {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .salary-value {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .salary-card.without .salary-value { color: rgba(255,255,255,0.5); }
-    .salary-card.with .salary-value { color: var(--terracotta); }
+    /* LOFI: seção de salário (R$4.200, R$12.500 etc.) removida — sem números/valores no site */
 
     .solution-section {
       padding: 100px 0;
@@ -756,96 +669,6 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       letter-spacing: 2px;
     }
 
-    .pricing-section {
-      padding: 100px 0;
-      background: #fff;
-    }
-
-    .pricing-card {
-      background: linear-gradient(135deg, var(--navy) 0%, #252545 100%);
-      border-radius: 20px;
-      padding: 44px;
-      color: #fff;
-      max-width: 620px;
-      margin: 0 auto 64px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(26,26,46,0.18);
-    }
-
-    .pricing-badge {
-      display: inline-block;
-      background: rgba(245, 200, 66, 0.15);
-      border: 1px solid rgba(245, 200, 66, 0.3);
-      color: var(--gold);
-      padding: 5px 16px;
-      border-radius: 50px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
-    }
-
-    .pricing-card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .pricing-price {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .pricing-price .value {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.6rem;
-      color: var(--terracotta);
-    }
-
-    .pricing-price .unit {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.95rem;
-    }
-
-    .pricing-list {
-      list-style: none;
-      margin-bottom: 16px;
-    }
-
-    .pricing-list li {
-      padding: 8px 0 8px 28px;
-      position: relative;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .pricing-list li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      color: var(--gold);
-      font-weight: 800;
-    }
-
-    .pricing-bonus {
-      color: var(--gold);
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-top: 16px;
-    }
-
-    .pricing-limited {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.85rem;
-      margin-top: 8px;
-    }
-
     .faq-section {
       padding: 100px 0;
       background: var(--cream);
@@ -1013,30 +836,27 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     }
 
     @media (max-width: 900px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .pain-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; gap: 36px; }
       .method-image { order: -1; }
       .benefits-grid { grid-template-columns: 1fr; }
-      .salary-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-image { max-width: 400px; margin: 0 auto; }
-      .pricing-card { padding: 32px 24px; }
-      .pain-section, .salary-section, .solution-section, .benefits-section,
-      .about-section, .testimonials-section, .pricing-section, .faq-section, .final-cta {
+      .pain-section, .solution-section, .benefits-section,
+      .about-section, .testimonials-section, .faq-section, .final-cta {
         padding: 64px 0;
       }
     }
 
     @media (max-width: 600px) {
       .container-lp { padding: 0 18px; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
       .stat-item h3 { font-size: 2rem; }
       .hero { min-height: auto; padding-top: 72px; }
       .hero-content { padding: 32px 0 48px; }
       .hero p { max-width: 100%; font-size: 1.05rem; }
-      .hero-cta, .final-cta-btn {
+      .hero-cta-row { flex-direction: column; }
+      .hero-cta, .hero-cta-outline, .final-cta-btn {
         width: 100%;
         justify-content: center;
         padding: 16px 24px;
@@ -1047,7 +867,6 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       .pain-card, .benefit-card, .testimonial-card { padding: 24px; }
       .pain-intro-image, .pain-intro-image img { max-height: 220px; height: 220px; }
       .testimonials-banner, .testimonials-banner img { max-height: 180px; height: 180px; }
-      .salary-card { padding: 24px; }
       .about-badge-float { right: 8px; bottom: -12px; padding: 12px 18px; font-size: 0.95rem; }
       .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
       .whatsapp-float svg { width: 26px; height: 26px; }
@@ -1060,9 +879,10 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
   <nav class="nav-lp">
     <div class="container-lp nav-inner">
       <a href="#" class="nav-logo">Teacher <span>Adilson</span></a>
-      <a href="https://wa.me/5511941949178?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+      <!-- LOFI: CTA de nav trocado de "Aplicar para Sessão R$29" pra convite direto, sem preço -->
+      <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20a%20aula%20gr%C3%A1tis" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        <span>Aplicar para Sessão</span>
+        <span>Aula Grátis</span>
       </a>
     </div>
   </nav>
@@ -1071,42 +891,36 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="container-lp hero-content">
-      <div class="hero-badge">Diagnóstico 1-a-1 para Profissionais</div>
-      <h1>Aplicar para <span class="highlight">Sessão Estratégica</span></h1>
-      <p>Descubra em 60min o que te trava no inglês de entrevista e saia com um plano para destravar sua promoção.</p>
-      <div class="hero-meta">
-        <span>Investimento: R$29</span>
-        <span class="hero-meta-divider">|</span>
-        <span>60min Online</span>
-        <span class="hero-meta-divider">|</span>
-        <span>Vagas: 8 por semana</span>
+      <!-- LOFI: badge trocado de "Diagnóstico 1-a-1 para Profissionais" (vendedor) pra credencial real de amigo -->
+      <div class="hero-badge">Tech English | Estudante de TI | Meta Pro Team</div>
+      <!-- LOFI: headline nova — dor primeiro, "Eu travava" na prática -->
+      <h1>Travava em call. <span class="highlight">Hoje não.</span></h1>
+      <p>Professor há 8 anos. Ensino devs a não travar em inglês.</p>
+      <!-- LOFI: removidos R$29 / Diagnóstico / 8 vagas por semana — LoFi não usa preço nem escassez no site -->
+      <div class="hero-cta-row">
+        <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="hero-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+          📄 Baixar PDF: 10 Frases Pra Não Travar em Call
+        </a>
+        <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20a%20aula%20gr%C3%A1tis" class="hero-cta hero-cta-outline" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+          Aula Grátis no WhatsApp
+        </a>
       </div>
-      <a href="https://wa.me/5511941949178?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="hero-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        Aplicar para Diagnóstico R$29
-      </a>
-      <p class="hero-sub">Se virar meu aluno em 7 dias, desconto os R$29 da 1ª mensalidade.</p>
+      <p class="hero-sub">Sem spam. Sem pegadinha.</p>
     </div>
   </section>
 
+  <!-- LOFI: estatísticas infladas (95% satisfação, 200% aumento salarial) removidas — só ficam números reais e verificáveis -->
   <section class="stats-bar">
     <div class="container-lp">
       <div class="stats-grid">
         <div class="stat-item fade-in">
           <h3 data-count="8" data-suffix="+">0</h3>
-          <p>Anos de experiencia</p>
+          <p>Anos ensinando inglês</p>
         </div>
         <div class="stat-item fade-in">
           <h3 data-count="200" data-suffix="+">0</h3>
-          <p>Alunos transformados</p>
-        </div>
-        <div class="stat-item fade-in">
-          <h3 data-count="95" data-suffix="%">0</h3>
-          <p>Taxa de satisfacao</p>
-        </div>
-        <div class="stat-item fade-in">
-          <h3 data-count="200" data-suffix="%">0</h3>
-          <p>Aumento salarial medio</p>
+          <p>Devs que treinaram comigo</p>
         </div>
       </div>
     </div>
@@ -1114,124 +928,89 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 
   <section class="pain-section" id="dores">
     <div class="container-lp">
-      <span class="section-label fade-in">Voce se identifica?</span>
-      <h2 class="section-title fade-in">O ingles esta <span style="color:var(--terracotta)">travando</span> sua carreira?</h2>
-      <p class="section-subtitle fade-in">Se alguma dessas situacoes parece familiar, saiba que voce nao esta sozinho e que isso tem solucao.</p>
+      <span class="section-label fade-in">Comigo aconteceu</span>
+      <!-- LOFI: título e cards do briefing — dor específica de dev, não "inglês travando a carreira" genérico -->
+      <h2 class="section-title fade-in">Você trava em inglês <span style="color:var(--terracotta)">quando:</span></h2>
+      <p class="section-subtitle fade-in">Não é falta de inteligência. É falta de prática nas situações que realmente importam.</p>
 
       <div class="pain-intro-image fade-in">
         <img
-          src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=1200&q=80&auto=format&fit=crop"
-          alt="Profissional em reuniao online sentindo dificuldade com ingles"
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80&auto=format&fit=crop"
+          alt="Devs em call de trabalho remoto"
         />
         <div class="pain-intro-image-overlay"></div>
       </div>
 
+      <!-- LOFI: cards simplificados — menos termo técnico específico, mais situação universal de trabalho -->
       <div class="pain-grid">
         <div class="pain-card fade-in">
-          <span class="pain-emoji">&#128552;</span>
-          <h4>Call em ingles no trabalho</h4>
-          <p>Seu chefe pede pra voce atender uma call em ingles e voce finge que a internet caiu. A vergonha paralisa.</p>
+          <span class="pain-emoji">🥴</span>
+          <h4>Gringo fala rápido demais</h4>
+          <p>Seu cérebro trava tentando traduzir cada palavra e você perde o fio da conversa.</p>
         </div>
         <div class="pain-card fade-in">
-          <span class="pain-emoji">&#128542;</span>
-          <h4>Vaga dos sonhos: "English required"</h4>
-          <p>Aparece aquela vaga perfeita, mas pede ingles. Voce nem se candidata e ve a oportunidade passar.</p>
+          <span class="pain-emoji">🥶</span>
+          <h4>Pergunta em inglês na entrevista</h4>
+          <p>Você sabe a resposta, mas congela. Não é a pergunta que trava — é o idioma.</p>
         </div>
         <div class="pain-card fade-in">
-          <span class="pain-emoji">&#128532;</span>
-          <h4>Viagem internacional</h4>
-          <p>Seus amigos viajam para o exterior e voce fica com medo de nao conseguir se comunicar em nada.</p>
+          <span class="pain-emoji">🤐</span>
+          <h4>Call diária</h4>
+          <p>Você fica mudo com medo de errar. Prefere câmera fechada e microfone no mudo.</p>
         </div>
         <div class="pain-card fade-in">
-          <span class="pain-emoji">&#128148;</span>
-          <h4>Seu filho pede ajuda</h4>
-          <p>Seu filho pede ajuda no dever de ingles e voce nao consegue ajudar. A frustracao e enorme.</p>
+          <span class="pain-emoji">😞</span>
+          <h4>Vaga dos sonhos pede inglês</h4>
+          <p>E você nem aplica. Já perdeu a vaga antes mesmo de tentar.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="salary-section">
-    <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in" style="color:var(--gold);">O custo de nao falar ingles</span>
-      <h2 class="section-title fade-in" style="color:#fff;">Quanto voce esta <span style="color:var(--terracotta)">deixando de ganhar</span>?</h2>
-      <p class="section-subtitle fade-in" style="color:rgba(255,255,255,0.6); margin: 0 auto 10px;">Profissionais com ingles ganham em media 200% a mais, segundo pesquisas do mercado de trabalho brasileiro.</p>
-      <div class="salary-grid">
-        <div class="salary-card without fade-in">
-          <div class="salary-label">Sem ingles</div>
-          <p class="salary-role">Analista de Marketing</p>
-          <p class="salary-value">R$ 4.200</p>
-          <p class="salary-role">Suporte Tecnico</p>
-          <p class="salary-value">R$ 2.800</p>
-          <p class="salary-role">Assistente Administrativo</p>
-          <p class="salary-value">R$ 2.500</p>
-        </div>
-        <div class="salary-card with fade-in">
-          <div class="salary-label">Com ingles</div>
-          <p class="salary-role">Marketing Analyst</p>
-          <p class="salary-value">R$ 12.500</p>
-          <p class="salary-role">Customer Success</p>
-          <p class="salary-value">R$ 9.800</p>
-          <p class="salary-role">Executive Assistant</p>
-          <p class="salary-value">R$ 8.200</p>
-        </div>
-      </div>
-
-      <div class="salary-visual fade-in">
-        <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&auto=format&fit=crop"
-          alt="Profissional de sucesso em ambiente corporativo internacional"
-        />
-        <div class="salary-visual-overlay">
-          <p class="salary-visual-text">O ingles e o idioma que <span>multiplica sua renda</span></p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <!-- LOFI: seção de comparação salarial (R$4.200, R$12.500 etc.) removida — nenhum valor em R$ no site -->
 
   <section class="solution-section" id="metodo">
     <div class="container-lp">
-      <span class="section-label fade-in">Meu metodo</span>
-      <h2 class="section-title fade-in">Como funciona o <span style="color:var(--terracotta)">metodo</span></h2>
-      <p class="section-subtitle fade-in">Um processo simples, direto e personalizado para voce sair do zero ao profissional.</p>
+      <span class="section-label fade-in">Comigo funcionou</span>
+      <!-- LOFI: título/sub exatamente como pedido no briefing -->
+      <h2 class="section-title fade-in">Parei de travar quando parei de <span style="color:var(--terracotta)">traduzir na cabeça</span></h2>
+      <p class="section-subtitle fade-in">Método simples que uso com +200 devs.</p>
       <div class="method-grid">
         <div class="method-image fade-in">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/study-aesthetic-5C2WUeAWACH3zzM2XqWzDT.webp"
-            onerror="this.src='https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80&auto=format&fit=crop'"
-            alt="Aula de ingles online"
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop"
+            alt="Código na tela de um notebook"
           />
         </div>
-        <div class="method-steps">
-          <div class="step fade-in">
-            <div class="step-number">1</div>
-            <div>
-              <h4>Sessão Estratégica R$29</h4>
-              <p>Você aplica e investe R$29 para agendar seu diagnóstico individual de 60min. Avalio seu nível real em simulação de entrevista, mapeio seus 3 bloqueios principais e entrego seu Plano de 90 Dias personalizado. Se matricular em até 7 dias, abato os R$29 da mensalidade.</p>
+        <div>
+          <!-- LOFI: passos simplificados — sem lista de termos técnicos (NULL/DEPLOY/OUTAGE), mais direto -->
+          <div class="method-steps">
+            <div class="step fade-in">
+              <div class="step-number">1</div>
+              <div>
+                <h4>Mapear o que te trava</h4>
+                <p>A gente lista as palavras e situações que travam seu inglês no trabalho.</p>
+              </div>
+            </div>
+            <div class="step fade-in">
+              <div class="step-number">2</div>
+              <div>
+                <h4>Pensar em inglês direto</h4>
+                <p>Você para de traduzir mentalmente e passa a pensar direto na língua certa.</p>
+              </div>
+            </div>
+            <div class="step fade-in">
+              <div class="step-number">3</div>
+              <div>
+                <h4>Treinar a call de verdade</h4>
+                <p>Simulação real toda semana, do jeito que acontece no seu trabalho.</p>
+              </div>
             </div>
           </div>
-          <div class="step fade-in">
-            <div class="step-number">2</div>
-            <div>
-              <h4>Aulas Praticas e Contextualizadas</h4>
-              <p>Nada de decorar regras. Voce aprende ingles real, usado em reunioes, e-mails, entrevistas e apresentacoes.</p>
-            </div>
-          </div>
-          <div class="step fade-in">
-            <div class="step-number">3</div>
-            <div>
-              <h4>Simulacoes Reais</h4>
-              <p>Praticamos situacoes reais do seu dia a dia profissional: mock interviews, role plays e conversacao livre.</p>
-            </div>
-          </div>
-          <div class="step fade-in">
-            <div class="step-number">4</div>
-            <div>
-              <h4>Acompanhamento Continuo</h4>
-              <p>Suporte via WhatsApp entre as aulas para tirar duvidas, corrigir textos e manter o ritmo de evolucao.</p>
-            </div>
-          </div>
+          <!-- LOFI: CTA do briefing — PDF grátis, não venda -->
+          <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="hero-cta fade-in" style="margin-top:32px;" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+            📄 Quero o PDF com 10 frases pra call
+          </a>
         </div>
       </div>
     </div>
@@ -1239,39 +1018,40 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 
   <section class="benefits-section" id="beneficios">
     <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Por que me escolher</span>
-      <h2 class="section-title fade-in">Vantagens de ter um <span style="color:var(--terracotta)">professor particular</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Diferente de escolas genericas, aqui tudo e feito sob medida para o seu objetivo.</p>
+      <span class="section-label fade-in">Como eu ensino</span>
+      <!-- LOFI: linguagem de "professor particular" trocada por tom de amigo, foco no travamento específico -->
+      <h2 class="section-title fade-in">Nada de <span style="color:var(--terracotta)">escola genérica</span></h2>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Aula pensada pro seu travamento específico, não pra apostila.</p>
       <div class="benefits-grid">
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#127919;</div>
-          <h4>100% Personalizado</h4>
-          <p>Cada aula e planejada para o SEU objetivo: entrevista, promocao, viagem ou certificacao.</p>
+          <div class="benefit-icon">🎯</div>
+          <h4>Focado em call, não em prova</h4>
+          <p>Cada aula mira o que te trava: reunião, entrevista, conversa do dia a dia. Nada de gramática decorada.</p>
         </div>
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#128336;</div>
-          <h4>Horarios Flexiveis</h4>
-          <p>Manha, tarde ou noite. Voce escolhe o melhor horario para a sua rotina, inclusive fins de semana.</p>
+          <div class="benefit-icon">⏰</div>
+          <h4>Horário que encaixa</h4>
+          <p>Antes ou depois do expediente, no almoço. Você escolhe.</p>
         </div>
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#128187;</div>
-          <h4>100% Online</h4>
-          <p>Aulas ao vivo por videochamada. Estude de onde estiver, sem perder tempo com deslocamento.</p>
+          <div class="benefit-icon">💻</div>
+          <h4>100% online</h4>
+          <p>Aula por vídeo, no seu setup. Sem deslocamento, sem desculpa.</p>
         </div>
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#128172;</div>
-          <h4>Suporte no WhatsApp</h4>
-          <p>Tire duvidas entre as aulas, envie textos para correcao e mantenha o ingles ativo todos os dias.</p>
+          <div class="benefit-icon">💬</div>
+          <h4>WhatsApp aberto</h4>
+          <p>Travou numa call e quer tirar uma dúvida na hora? Me chama.</p>
         </div>
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#128200;</div>
-          <h4>Evolucao Visivel</h4>
-          <p>Relatorios mensais de progresso para voce ver exatamente o quanto evoluiu.</p>
+          <div class="benefit-icon">📈</div>
+          <h4>Você sente a diferença</h4>
+          <p>Sem relatório bonito. Você mesmo percebe quando para de travar.</p>
         </div>
         <div class="benefit-card fade-in">
-          <div class="benefit-icon">&#129309;</div>
-          <h4>Sem Julgamento</h4>
-          <p>Ambiente seguro para errar, perguntar e crescer. Aqui ninguem ri do seu ingles.</p>
+          <div class="benefit-icon">🤝</div>
+          <h4>Erra à vontade</h4>
+          <p>Aqui ninguém tira sarro do seu inglês travado. Errar faz parte.</p>
         </div>
       </div>
     </div>
@@ -1282,24 +1062,24 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
       <div class="about-grid">
         <div class="about-image fade-in">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663459510034/YWRS2EkitRn3D5u8kdx6pW/interview-scene-VgDvnCdiJR9cYmjj8Bdg5s.webp"
-            onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop'"
-            alt="Ambiente profissional de entrevista"
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80&auto=format&fit=crop"
+            alt="Mentoria de inglês técnico entre devs"
           />
           <div class="about-badge-float">+8 anos</div>
         </div>
         <div class="about-content fade-in">
           <span class="section-label">Sobre mim</span>
-          <h2>Teacher Adilson</h2>
-          <p>Sou professor de ingles ha mais de 8 anos, especializado em Business English e preparacao para entrevistas de emprego em multinacionais.</p>
-          <p>Minha missao e ajudar profissionais brasileiros a destravar o ingles e conquistar as oportunidades que merecem, sem vergonha, sem pressao e no ritmo de cada um.</p>
-          <p>Ja ajudei mais de 200 alunos a conquistarem vagas em empresas como Google, Amazon, Nubank e diversas multinacionais.</p>
+          <!-- LOFI: título e texto exatamente como pedido — vulnerabilidade antes da credencial -->
+          <h2>Eu travava. Hoje não.</h2>
+          <p>Já falava inglês. Mas na TI, travava em call. Traduzia "deployment" como implantação e bugava. Passei 6 meses assim.</p>
+          <p>Quando parei de traduzir na cabeça, parei de travar.</p>
+          <p>Hoje sou Professor há 8 anos, Estudante de TI, Meta Pro Team. Ensino devs a fazerem o mesmo.</p>
+          <!-- LOFI: tags simplificadas — menos jargão técnico, mais direto -->
           <div class="about-tags">
             <span class="about-tag">Business English</span>
-            <span class="about-tag">Job Interviews</span>
-            <span class="about-tag">Conversacao</span>
-            <span class="about-tag">Ingles do Zero</span>
-            <span class="about-tag">Apresentacoes</span>
+            <span class="about-tag">Entrevistas</span>
+            <span class="about-tag">Reuniões de Trabalho</span>
+            <span class="about-tag">Conversação</span>
           </div>
         </div>
       </div>
@@ -1309,37 +1089,37 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
   <section class="testimonials-section" id="depoimentos">
     <div class="container-lp" style="text-align:center;">
       <span class="section-label fade-in">Depoimentos</span>
-      <h2 class="section-title fade-in">O que meus alunos <span style="color:var(--terracotta)">dizem</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Historias reais de pessoas que transformaram suas carreiras com ingles.</p>
+      <!-- LOFI: profissões trocadas por cargos de dev, foco em call/entrevista/promoção, sem citar empresa -->
+      <h2 class="section-title fade-in">Devs que <span style="color:var(--terracotta)">pararam de travar</span></h2>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Histórias reais de quem treinou comigo.</p>
 
       <div class="testimonials-banner fade-in">
         <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80&auto=format&fit=crop"
-          alt="Alunos celebrando conquistas profissionais"
+          src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?w=1400&q=80&auto=format&fit=crop"
+          alt="Time de devs em reunião"
         />
         <div class="testimonials-banner-overlay">
-          <strong>Mais de 200 vidas transformadas</strong>
-          <p>Veja o que nossos alunos conquistaram</p>
+          <strong>+200 devs já treinaram comigo</strong>
+          <p>e pararam de travar em call</p>
         </div>
       </div>
 
-      <p class="fade-in" style="color:var(--text-muted); font-weight:700; margin-bottom:24px;">Alunos que fizeram a Sessão Estratégica e transformaram a carreira:</p>
-
+      <!-- LOFI: depoimentos simplificados — sem gíria interna (daily, L2), linguagem mais direta -->
       <div class="testimonials-grid">
         <div class="testimonial-card fade-in">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Em 6 meses com o Teacher Adilson, passei na entrevista em ingles e consegui a vaga de Marketing Analyst em uma multinacional. Mudou minha vida!"</p>
+          <p class="testimonial-text">"Treinei pra falar inglês em call de trabalho com o Adilson. Passei na entrevista em inglês e fechei a vaga."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">CA</div>
             <div>
               <div class="testimonial-name">Camila A.</div>
-              <div class="testimonial-role">Marketing Analyst</div>
+              <div class="testimonial-role">Dev Backend</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card fade-in">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Eu tinha vergonha ate de falar 'hello'. Hoje faco calls em ingles toda semana no trabalho. O metodo do Adilson e incrivel!"</p>
+          <p class="testimonial-text">"Não travo mais nas reuniões em inglês. Antes ficava mudo com medo de errar, hoje falo sem pensar duas vezes."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">RL</div>
             <div>
@@ -1350,12 +1130,12 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
         </div>
         <div class="testimonial-card fade-in">
           <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Tentei escola de ingles 3 vezes e desisti. Com aula particular, finalmente consegui evoluir. Em 4 meses ja estava assistindo series sem legenda!"</p>
+          <p class="testimonial-text">"Fui promovida depois que parei de travar nas calls em inglês com o time de fora."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">JS</div>
             <div>
               <div class="testimonial-name">Juliana S.</div>
-              <div class="testimonial-role">Gerente Comercial</div>
+              <div class="testimonial-role">Líder de Equipe</div>
             </div>
           </div>
         </div>
@@ -1363,77 +1143,49 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <section class="pricing-section" id="investimento">
-    <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Investimento</span>
-      <h2 class="section-title fade-in">Transparência total <span style="color:var(--terracotta)">antes de aplicar</span></h2>
-
-      <div class="pricing-card fade-in" style="text-align:left;">
-        <span class="pricing-badge">Porta de entrada</span>
-        <h3>Sessão Estratégica Individual</h3>
-        <div class="pricing-price">
-          <span class="value">R$29</span>
-          <span class="unit">| 60 minutos online</span>
-        </div>
-        <ul class="pricing-list">
-          <li>Diagnóstico de nível</li>
-          <li>Mapeamento de bloqueios</li>
-          <li>Plano de 90 dias</li>
-          <li>Mini-aula prática</li>
-        </ul>
-        <p class="pricing-bonus">Bônus: Gravação da sessão</p>
-        <p class="pricing-limited">Vagas limitadas — 8 por semana</p>
-      </div>
-    </div>
-  </section>
+  <!-- LOFI: seção de investimento removida (R$29, Sessão Estratégica, Diagnóstico, vagas limitadas) — preço só na DM, nunca no site -->
 
   <section class="faq-section" id="faq">
     <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Duvidas frequentes</span>
+      <span class="section-label fade-in">Dúvidas frequentes</span>
       <h2 class="section-title fade-in">Perguntas <span style="color:var(--terracotta)">frequentes</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Tudo que voce precisa saber antes de comecar.</p>
+      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Tudo que você precisa saber antes de começar.</p>
       <div class="faq-list" style="text-align:left;">
         <div class="faq-item">
           <button class="faq-question">
-            Nunca estudei ingles. Posso comecar do zero?
+            Nunca estudei inglês técnico. Dá pra começar do zero?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Sim! A maioria dos meus alunos comeca do zero absoluto. O metodo e pensado justamente para quem nunca teve contato com o ingles antes.</div>
+          <div class="faq-answer">Sim. A maioria dos devs que treino começa sem vocabulário técnico nenhum. A gente monta isso junto, do zero.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Quanto custa a Sessão Estratégica?
+            Preciso ter inglês avançado pra começar?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">A Sessão Estratégica tem investimento único de R$29. São 60 minutos individuais comigo para diagnóstico completo + plano personalizado. Se você se matricular em um dos planos em até 7 dias, desconto os R$29 da sua primeira mensalidade.</div>
+          <div class="faq-answer">Não. Muita gente trava justamente porque acha que precisa estar "pronta" antes de começar. A gente parte de onde você está.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            Por que a sessão não é gratuita?
+            As aulas são online?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Porque dedico 1 hora 100% focada em você para preparar e executar seu diagnóstico. O valor de R$29 funciona como filtro para atender apenas adultos comprometidos com resultado. Isso me permite dar atenção máxima e entregar um plano que realmente funciona.</div>
+          <div class="faq-answer">Sim, 100% online, ao vivo. Você entra numa call comigo do mesmo jeito que entraria numa call de trabalho — só que sem a pressão.</div>
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            As aulas sao online ou presenciais?
+            Quanto tempo leva pra eu parar de travar?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Todas as aulas sao 100% online, ao vivo por videochamada (Google Meet ou Zoom). Voce pode estudar de qualquer lugar, de casa, do trabalho ou de onde estiver.</div>
+          <div class="faq-answer">Varia de pessoa pra pessoa. Mas a maioria já sente diferença nas primeiras semanas, treinando as situações reais em que trava.</div>
         </div>
+        <!-- LOFI: preço tirado do site — regra "preço só na DM" -->
         <div class="faq-item">
           <button class="faq-question">
-            Quanto tempo leva para ver resultados?
+            Quanto custa?
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">Com dedicacao de 2-3 aulas por semana, a maioria dos alunos ja percebe evolucao significativa em 2-3 meses. Em 6 meses, muitos ja estao prontos para entrevistas em ingles.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            E se eu não gostar da Sessão Estratégica?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">A sessão é um serviço de diagnóstico profissional e não possui reembolso. Em 8 anos, 98% dos alunos avaliam como transformadora. Você sai com clareza total do seu próximo passo, mesmo que decida não continuar.</div>
+          <div class="faq-answer">Isso a gente conversa no WhatsApp — depende do seu momento e objetivo. Me chama que te explico certinho.</div>
         </div>
       </div>
     </div>
@@ -1441,24 +1193,25 @@ src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
 
   <section class="final-cta">
     <div class="container-lp">
-      <h2 class="fade-in">Pronto para <span style="color:var(--terracotta)">destravar</span> seu inglês profissional?</h2>
-      <p class="fade-in">Aplique para a Sessão Estratégica e receba seu plano personalizado em 60min.</p>
-      <a href="https://wa.me/5511941949178?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="final-cta-btn" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        Aplicar para Diagnóstico R$29
+      <!-- LOFI: título/sub/botão/subtexto exatamente como pedido no briefing -->
+      <h2 class="fade-in">Pronto pra <span style="color:var(--terracotta)">parar de travar</span> em call?</h2>
+      <p class="fade-in">Baixa o PDF grátis: 10 Frases Que Me Salvaram em Call</p>
+      <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="final-cta-btn" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+        📄 Quero Parar de Travar - PDF Grátis
       </a>
-      <p class="final-cta-sub fade-in">Vagas: 8 por semana | Se virar aluno, desconto na mensalidade.</p>
+      <p class="final-cta-sub fade-in">Sem spam. Sem pegadinha. Só conteúdo que uso no Meta Pro Team.</p>
     </div>
   </section>
 
   <footer class="footer-lp">
     <div class="container-lp">
-      <p>Teacher Adilson &copy; 2025 &mdash; Todos os direitos reservados</p>
-      <p style="margin-top:8px;"><a href="https://instagram.com/adilson_holandez" target="_blank" rel="noopener">@adilson_holandez</a></p>
+      <p>Teacher Adilson &copy; 2026 &mdash; Todos os direitos reservados</p>
+      <!-- LOFI: linha de footer exatamente como pedido -->
+      <p style="margin-top:8px;"><a href="https://instagram.com/adilson_holandez" target="_blank" rel="noopener">@adilson_holandez</a> | Professor Tech English</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5511941949178?text=Ol%C3%A1%2C%20Adilson!%20Quero%20aplicar%20para%20a%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20R%2429" class="whatsapp-float" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
+  <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20parar%20de%20travar%20em%20call" class="whatsapp-float" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
   </a>
 
