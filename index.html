@@ -1,1280 +1,3960 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <!-- LOFI: título trocado — "Aulas de Inglês" (genérico) vira posicionamento Tech English -->
-  <title>Teacher Adilson | Pare de Travar em Call - Tech English</title>
 
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '871942722527879');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Inglês técnico para desenvolvedores que querem trabalhar com equipes internacionais, passar em entrevistas e conquistar oportunidades globais."
+  />
+
+  <meta
+    name="keywords"
+    content="inglês para devs, inglês técnico, inglês para programadores, inglês para TI, entrevista internacional, developer English"
+  />
+
+  <meta name="theme-color" content="#070A0F" />
+
+  <title>
+    Teacher Adi | Inglês Técnico para Developers
+  </title>
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet" />
 
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <!-- =====================================================
+       META PIXEL
+  ====================================================== -->
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {
+      if(f.fbq)return;
+
+      n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+      };
+
+      if(!f._fbq)f._fbq=n;
+
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq(
+      'init',
+      '871942722527879'
+    );
+
+    fbq(
+      'track',
+      'PageView'
+    );
+  </script>
+
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=871942722527879&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+
+
+  <!-- =====================================================
+       DESIGN SYSTEM
+  ====================================================== -->
 
   <style>
-    *, *::before, *::after {
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root {
-      --cream: #FFFBF5;
-      --navy: #1A1A2E;
-      --navy-light: #252540;
-      --terracotta: #E85D3A;
-      --terracotta-dark: #C94E30;
-      --green-wpp: #25D366;
-      --green-wpp-dark: #1DA851;
-      --gold: #F5C842;
-      --text-dark: #2D2D3A;
-      --text-muted: #6B6B7B;
-      --text-light: #F5F0E8;
-      --border-light: #E8E0D4;
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text-dark);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+      margin: 0;
 
-    h1, h2, h3, h4 {
-      font-family: 'DM Serif Display', serif;
-      line-height: 1.2;
-    }
-
-    .container-lp {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-      50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .nav-lp {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(255, 251, 245, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-light);
-      padding: 14px 0;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.35rem;
-      color: var(--navy);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--terracotta); }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-wpp);
-      color: #fff;
-      padding: 10px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .nav-cta:hover {
-      background: var(--green-wpp-dark);
-      transform: scale(1.03);
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding-top: 80px;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      /* LOFI: imagem de escritório genérico trocada por setup de dev (código na tela, dark mode) */
       background:
-        url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+        #070A0F;
+
+      color:
+        #F5F7FA;
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      line-height:
+        1.6;
+
+      overflow-x:
+        hidden;
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(26,26,46,0.88) 0%, rgba(26,26,46,0.65) 50%, rgba(26,26,46,0.45) 100%);
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      padding: 60px 0;
-    }
 
-    .hero-badge {
-      display: inline-block;
-      background: rgba(245, 200, 66, 0.15);
-      border: 1px solid rgba(245, 200, 66, 0.3);
-      color: var(--gold);
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 .highlight { color: var(--terracotta); }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 24px;
-      max-width: 540px;
-    }
-
-    /* LOFI: bloco de preço/vagas (R$29, 60min, 8 vagas por semana) removido — sem escassez artificial */
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--green-wpp);
-      color: #fff;
-      padding: 16px 36px;
-      border-radius: 50px;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: background 0.3s, transform 0.2s;
-      animation: pulse-glow 2s infinite;
     }
 
-    .hero-cta:hover {
-      background: var(--green-wpp-dark);
-      transform: scale(1.04);
+
+    button,
+    a {
+      -webkit-tap-highlight-color:
+        transparent;
     }
 
-    .hero-cta-outline {
-      background: transparent;
-      border: 2px solid var(--green-wpp);
-      color: #fff;
-      animation: none;
+
+    ::selection {
+      background:
+        rgba(37,211,102,.25);
+
+      color:
+        #fff;
     }
 
-    .hero-cta-outline:hover {
-      background: rgba(37,211,102,0.15);
+
+    /* =====================================================
+       VARIABLES
+    ====================================================== */
+
+    :root {
+
+      --bg:
+        #070A0F;
+
+      --surface:
+        #0D1117;
+
+      --surface-2:
+        #111821;
+
+      --surface-3:
+        #151E28;
+
+      --border:
+        #1C2733;
+
+      --border-light:
+        rgba(255,255,255,.08);
+
+      --text:
+        #F5F7FA;
+
+      --muted:
+        #8B98A8;
+
+      --muted-2:
+        #657181;
+
+      --green:
+        #25D366;
+
+      --green-dark:
+        #1DA851;
+
+      --white:
+        #FFFFFF;
+
+      --container:
+        1200px;
+
+      --radius-sm:
+        10px;
+
+      --radius-md:
+        16px;
+
+      --radius-lg:
+        24px;
+
+      --radius-xl:
+        32px;
+
+      --transition:
+        220ms cubic-bezier(.22,1,.36,1);
     }
 
-    .hero-sub {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
+
+    /* =====================================================
+       GLOBAL
+    ====================================================== */
+
+    .container {
+
+      width:
+        min(
+          var(--container),
+          calc(100% - 48px)
+        );
+
+      margin:
+        0 auto;
     }
 
-    .stats-bar {
-      background: var(--navy);
-      padding: 40px 0;
+
+    .mono {
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      text-align: center;
+
+    .green {
+      color:
+        var(--green);
     }
 
-    .stat-item h3 {
-      font-size: 2.6rem;
-      color: var(--terracotta);
-      margin-bottom: 4px;
+
+    .section {
+
+      position:
+        relative;
+
+      padding:
+        120px 0;
     }
 
-    .stat-item p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
+
+    .section-header {
+
+      max-width:
+        720px;
+
+      margin-bottom:
+        60px;
     }
 
-    .pain-section {
-      padding: 100px 0;
-      background: var(--cream);
+
+    .eyebrow {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      margin-bottom:
+        18px;
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .72rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        .12em;
+
+      text-transform:
+        uppercase;
     }
 
-    .section-label {
-      display: inline-block;
-      color: var(--terracotta);
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+
+    .eyebrow::before {
+
+      content:
+        "";
+
+      width:
+        22px;
+
+      height:
+        1px;
+
+      background:
+        var(--green);
     }
+
 
     .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: var(--navy);
-      margin-bottom: 16px;
+
+      font-size:
+        clamp(
+          2.3rem,
+          5vw,
+          4.3rem
+        );
+
+      line-height:
+        1;
+
+      letter-spacing:
+        -.055em;
+
+      margin-bottom:
+        20px;
     }
 
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin-bottom: 50px;
+
+    .section-description {
+
+      color:
+        var(--muted);
+
+      font-size:
+        1.05rem;
+
+      max-width:
+        650px;
     }
 
-    .pain-intro-image {
-      width: 100%;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 48px;
-      max-height: 340px;
-      position: relative;
+
+    /* =====================================================
+       BUTTONS
+    ====================================================== */
+
+    .btn {
+
+      position:
+        relative;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        10px;
+
+      min-height:
+        52px;
+
+      padding:
+        0 22px;
+
+      border:
+        1px solid transparent;
+
+      border-radius:
+        999px;
+
+      font-size:
+        .92rem;
+
+      font-weight:
+        800;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
     }
 
-    .pain-intro-image img {
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      display: block;
+
+    .btn-primary {
+
+      background:
+        var(--green);
+
+      color:
+        #041007;
+
+      box-shadow:
+        0 0 0
+        rgba(37,211,102,0);
     }
 
-    .pain-intro-image-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(45,45,58,0.55) 0%, transparent 60%);
-      border-radius: 20px;
+
+    .btn-primary:hover {
+
+      background:
+        #45e97e;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 14px 40px
+        rgba(37,211,102,.18);
     }
 
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,.025);
+
+      border-color:
+        var(--border);
+
+      color:
+        var(--text);
     }
 
-    .pain-card {
-      background: #fff;
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 32px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
+
+    .btn-secondary:hover {
+
+      background:
+        rgba(255,255,255,.06);
+
+      border-color:
+        rgba(255,255,255,.14);
+
+      transform:
+        translateY(-3px);
     }
 
-    .pain-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--terracotta);
-      border-radius: 16px 0 0 16px;
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+
+      position:
+        fixed;
+
+      top:
+        0;
+
+      left:
+        0;
+
+      right:
+        0;
+
+      z-index:
+        1000;
+
+      padding:
+        18px 0;
+
+      background:
+        rgba(7,10,15,.55);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.04);
+
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
+
+      transition:
+        background var(--transition);
     }
 
-    .pain-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+
+    .navbar.scrolled {
+
+      background:
+        rgba(7,10,15,.88);
+
+      border-bottom-color:
+        rgba(37,211,102,.12);
     }
 
-    .pain-emoji {
-      font-size: 2rem;
-      margin-bottom: 14px;
-      display: block;
+
+    .navbar-inner {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
     }
 
-    .pain-card h4 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
+
+    .logo {
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        1.18rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        -.05em;
     }
 
-    .pain-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+
+    .logo span {
+      color:
+        var(--green);
     }
 
-    /* LOFI: seção de salário (R$4.200, R$12.500 etc.) removida — sem números/valores no site */
 
-    .solution-section {
-      padding: 100px 0;
-      background: var(--navy);
-      position: relative;
+    .nav-links {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        30px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .84rem;
+
+      font-weight:
+        600;
     }
 
-    .solution-section .section-label { color: var(--gold); }
-    .solution-section .section-title { color: #fff; }
-    .solution-section .section-subtitle { color: rgba(255,255,255,0.6); }
 
-    .method-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .nav-links a {
+
+      transition:
+        color var(--transition);
     }
 
-    .method-image {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+    .nav-links a:hover {
+      color:
+        var(--white);
     }
 
-    .method-image img {
-      width: 100%;
-      height: auto;
-      display: block;
+
+    .nav-cta {
+
+      min-height:
+        42px;
+
+      padding:
+        0 18px;
+
+      font-size:
+        .78rem;
     }
 
-    .method-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      position:
+        relative;
+
+      min-height:
+        100vh;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      padding:
+        150px 0 100px;
+
+      overflow:
+        hidden;
+
+      isolation:
+        isolate;
     }
 
-    .step {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
+
+    .hero::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        700px;
+
+      height:
+        700px;
+
+      top:
+        -200px;
+
+      right:
+        -180px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(37,211,102,.14),
+          transparent 65%
+        );
+
+      filter:
+        blur(25px);
+
+      z-index:
+        -2;
+
+      pointer-events:
+        none;
     }
 
-    .step-number {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      background: var(--terracotta);
-      color: #fff;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
+
+    .hero::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background-image:
+
+        linear-gradient(
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        50px 50px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black 0%,
+          rgba(0,0,0,.5) 55%,
+          transparent 100%
+        );
+
+      z-index:
+        -3;
+
+      pointer-events:
+        none;
     }
 
-    .step h4 {
-      font-family: 'DM Sans', sans-serif;
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 4px;
+
+    .hero-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap:
+        80px;
+
+      align-items:
+        center;
     }
 
-    .step p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.92rem;
+
+    /* =====================================================
+       HERO COPY
+    ====================================================== */
+
+    .hero-status {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      margin-bottom:
+        26px;
+
+      padding:
+        7px 12px;
+
+      border:
+        1px solid
+        rgba(37,211,102,.2);
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(37,211,102,.06);
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .68rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        .07em;
     }
 
-    .benefits-section {
-      padding: 100px 0;
-      background: var(--cream);
+
+    .status-dot {
+
+      width:
+        7px;
+
+      height:
+        7px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green);
+
+      box-shadow:
+        0 0 16px
+        rgba(37,211,102,.8);
+
+      animation:
+        pulse 2s infinite;
     }
 
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity:
+          .5;
+      }
+
+      50% {
+        opacity:
+          1;
+      }
     }
 
-    .benefit-card {
-      background: #fff;
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 36px 28px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+
+    .hero h1 {
+
+      max-width:
+        800px;
+
+      margin-bottom:
+        28px;
+
+      font-size:
+        clamp(
+          3.2rem,
+          6vw,
+          5.8rem
+        );
+
+      line-height:
+        .94;
+
+      letter-spacing:
+        -.065em;
     }
 
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+
+    .hero h1 span {
+
+      display:
+        block;
+
+      color:
+        var(--green);
     }
 
-    .benefit-icon {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, var(--terracotta), #F08060);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.6rem;
+
+    .hero-description {
+
+      max-width:
+        650px;
+
+      margin-bottom:
+        30px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        clamp(
+          1rem,
+          2vw,
+          1.14rem
+        );
     }
 
-    .benefit-card h4 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
+
+    .hero-actions {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        12px;
+
+      margin-bottom:
+        18px;
     }
 
-    .benefit-card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
+
+    .hero-note {
+
+      color:
+        var(--muted-2);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .68rem;
     }
 
-    .about-section {
-      padding: 100px 0;
-      background: #fff;
+
+    /* =====================================================
+       TERMINAL
+    ====================================================== */
+
+    .terminal-wrapper {
+
+      position:
+        relative;
     }
+
+
+    .terminal-glow {
+
+      position:
+        absolute;
+
+      inset:
+        15%;
+
+      background:
+        rgba(37,211,102,.1);
+
+      filter:
+        blur(80px);
+
+      z-index:
+        -1;
+    }
+
+
+    .terminal {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        rgba(13,17,23,.82);
+
+      box-shadow:
+        0 50px 120px
+        rgba(0,0,0,.4);
+
+      backdrop-filter:
+        blur(20px);
+
+      animation:
+        terminalFloat 6s ease-in-out infinite;
+    }
+
+
+    @keyframes terminalFloat {
+
+      0%,
+      100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(-9px);
+      }
+    }
+
+
+    .terminal-header {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        7px;
+
+      padding:
+        14px 16px;
+
+      border-bottom:
+        1px solid
+        var(--border);
+    }
+
+
+    .terminal-dot {
+
+      width:
+        9px;
+
+      height:
+        9px;
+
+      border-radius:
+        50%;
+
+      background:
+        #35404C;
+    }
+
+
+    .terminal-title {
+
+      margin-left:
+        auto;
+
+      color:
+        #536170;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .62rem;
+    }
+
+
+    .terminal-body {
+
+      min-height:
+        390px;
+
+      padding:
+        30px;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .76rem;
+
+      line-height:
+        2;
+    }
+
+
+    .terminal-line {
+
+      opacity:
+        0;
+
+      animation:
+        terminalReveal
+        .5s
+        forwards;
+    }
+
+
+    .terminal-line:nth-child(1) {
+      animation-delay:
+        .3s;
+    }
+
+
+    .terminal-line:nth-child(2) {
+      animation-delay:
+        .8s;
+    }
+
+
+    .terminal-line:nth-child(3) {
+      animation-delay:
+        1.3s;
+    }
+
+
+    .terminal-line:nth-child(4) {
+      animation-delay:
+        1.8s;
+    }
+
+
+    .terminal-line:nth-child(5) {
+      animation-delay:
+        2.3s;
+    }
+
+
+    .terminal-line:nth-child(6) {
+      animation-delay:
+        2.8s;
+    }
+
+
+    .terminal-line:nth-child(7) {
+      animation-delay:
+        3.3s;
+    }
+
+
+    @keyframes terminalReveal {
+
+      to {
+        opacity:
+          1;
+        transform:
+          translateX(0);
+      }
+    }
+
+
+    .terminal-command {
+      color:
+        #C7D0DB;
+    }
+
+
+    .terminal-muted {
+      color:
+        #596574;
+    }
+
+
+    .terminal-green {
+      color:
+        var(--green);
+    }
+
+
+    .cursor {
+
+      display:
+        inline-block;
+
+      width:
+        7px;
+
+      height:
+        14px;
+
+      margin-left:
+        4px;
+
+      vertical-align:
+        middle;
+
+      background:
+        var(--green);
+
+      animation:
+        blink 1s infinite;
+    }
+
+
+    @keyframes blink {
+
+      0%,
+      45% {
+        opacity:
+          1;
+      }
+
+      46%,
+      100% {
+        opacity:
+          0;
+      }
+    }
+
+
+    /* =====================================================
+       STATS
+    ====================================================== */
+
+    .stats {
+
+      border-top:
+        1px solid
+        var(--border);
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+      background:
+        var(--surface);
+    }
+
+
+    .stats-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+    }
+
+
+    .stat {
+
+      padding:
+        34px;
+
+      text-align:
+        center;
+
+      border-right:
+        1px solid
+        var(--border);
+    }
+
+
+    .stat:last-child {
+      border-right:
+        0;
+    }
+
+
+    .stat strong {
+
+      display:
+        block;
+
+      margin-bottom:
+        5px;
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        2rem;
+    }
+
+
+    .stat span {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .72rem;
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        .08em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    /* =====================================================
+       PROBLEM
+    ====================================================== */
+
+    .problem {
+
+      background:
+        #080C11;
+    }
+
+
+    .comparison {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        20px;
+    }
+
+
+    .comparison-card {
+
+      padding:
+        32px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        var(--surface);
+    }
+
+
+    .comparison-card.featured {
+
+      border-color:
+        rgba(37,211,102,.28);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(37,211,102,.07),
+          rgba(13,17,23,.9)
+        );
+    }
+
+
+    .comparison-label {
+
+      margin-bottom:
+        24px;
+
+      color:
+        var(--muted-2);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .7rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        .1em;
+    }
+
+
+    .comparison-card.featured
+    .comparison-label {
+
+      color:
+        var(--green);
+    }
+
+
+    .question {
+
+      display:
+        flex;
+
+      align-items:
+        flex-start;
+
+      gap:
+        12px;
+
+      margin-bottom:
+        16px;
+
+      color:
+        #9BA6B4;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .78rem;
+    }
+
+
+    .question::before {
+
+      content:
+        "›";
+
+      color:
+        var(--green);
+
+      font-weight:
+        700;
+    }
+
+
+    /* =====================================================
+       BENTO
+    ====================================================== */
+
+    .bento {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      grid-auto-rows:
+        minmax(190px, auto);
+
+      gap:
+        16px;
+    }
+
+
+    .bento-card {
+
+      position:
+        relative;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      min-height:
+        190px;
+
+      padding:
+        26px;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        var(--surface);
+
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+    }
+
+
+    .bento-card:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(37,211,102,.25);
+
+      background:
+        var(--surface-2);
+    }
+
+
+    .bento-card.large {
+
+      grid-column:
+        span 2;
+    }
+
+
+    .bento-card.tall {
+
+      grid-row:
+        span 2;
+    }
+
+
+    .bento-icon {
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      margin-bottom:
+        20px;
+
+      border:
+        1px solid
+        rgba(37,211,102,.2);
+
+      border-radius:
+        12px;
+
+      background:
+        rgba(37,211,102,.06);
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .8rem;
+    }
+
+
+    .bento-card h3 {
+
+      margin-bottom:
+        8px;
+
+      font-size:
+        1.15rem;
+
+      letter-spacing:
+        -.025em;
+    }
+
+
+    .bento-card p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .85rem;
+    }
+
+
+    .bento-code {
+
+      margin-top:
+        20px;
+
+      padding:
+        14px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        10px;
+
+      background:
+        #080B10;
+
+      color:
+        #7E8B9A;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .65rem;
+
+      line-height:
+        1.8;
+    }
+
+
+    /* =====================================================
+       STACK
+    ====================================================== */
+
+    .stack-section {
+
+      background:
+        var(--surface);
+    }
+
+
+    .stack-list {
+
+      border-top:
+        1px solid
+        var(--border);
+    }
+
+
+    .stack-item {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        90px 1fr 120px;
+
+      gap:
+        30px;
+
+      align-items:
+        center;
+
+      padding:
+        25px 0;
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+      transition:
+        padding var(--transition);
+    }
+
+
+    .stack-item:hover {
+
+      padding-left:
+        10px;
+
+      padding-right:
+        10px;
+    }
+
+
+    .stack-number {
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .7rem;
+    }
+
+
+    .stack-name {
+
+      font-size:
+        1.3rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .stack-description {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .82rem;
+    }
+
+
+    .stack-arrow {
+
+      color:
+        var(--muted-2);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      text-align:
+        right;
+    }
+
+
+    /* =====================================================
+       ROADMAP
+    ====================================================== */
+
+    .roadmap {
+
+      position:
+        relative;
+    }
+
+
+    .roadmap-line {
+
+      position:
+        absolute;
+
+      top:
+        54px;
+
+      left:
+        8%;
+
+      right:
+        8%;
+
+      height:
+        1px;
+
+      background:
+        var(--border);
+    }
+
+
+    .roadmap-grid {
+
+      position:
+        relative;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(6,1fr);
+
+      gap:
+        14px;
+    }
+
+
+    .roadmap-item {
+
+      position:
+        relative;
+    }
+
+
+    .roadmap-dot {
+
+      width:
+        16px;
+
+      height:
+        16px;
+
+      margin:
+        0 auto 25px;
+
+      border:
+        3px solid
+        var(--bg);
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green);
+
+      box-shadow:
+        0 0 0 1px
+        rgba(37,211,102,.3);
+    }
+
+
+    .roadmap-card {
+
+      min-height:
+        190px;
+
+      padding:
+        20px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-md);
+
+      background:
+        var(--surface);
+
+      transition:
+        transform var(--transition),
+        border-color var(--transition);
+    }
+
+
+    .roadmap-card:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(37,211,102,.3);
+    }
+
+
+    .roadmap-month {
+
+      margin-bottom:
+        12px;
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .65rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .roadmap-card h3 {
+
+      margin-bottom:
+        8px;
+
+      font-size:
+        1rem;
+    }
+
+
+    .roadmap-card p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .75rem;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ====================================================== */
+
+    .about {
+
+      background:
+        #080C11;
+    }
+
 
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
-      align-items: center;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap:
+        80px;
+
+      align-items:
+        center;
     }
 
-    .about-image {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-      position: relative;
+
+    .about-visual {
+
+      position:
+        relative;
+
+      min-height:
+        500px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius-xl);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(37,211,102,.08),
+          transparent 55%
+        );
     }
 
-    .about-image img {
-      width: 100%;
-      display: block;
+
+    .about-avatar {
+
+      width:
+        210px;
+
+      height:
+        210px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border:
+        1px solid
+        rgba(37,211,102,.3);
+
+      border-radius:
+        50%;
+
+      background:
+        var(--surface-2);
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        2.2rem;
+
+      box-shadow:
+        0 0 100px
+        rgba(37,211,102,.1);
     }
 
-    .about-badge-float {
-      position: absolute;
-      bottom: -16px;
-      right: -16px;
-      background: var(--terracotta);
-      color: #fff;
-      padding: 16px 24px;
-      border-radius: 16px;
-      font-weight: 800;
-      font-size: 1.1rem;
-      box-shadow: 0 8px 24px rgba(232,93,58,0.3);
-      animation: float 3s ease-in-out infinite;
+
+    .about-code {
+
+      position:
+        absolute;
+
+      padding:
+        12px 15px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        10px;
+
+      background:
+        rgba(13,17,23,.9);
+
+      color:
+        var(--muted);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .63rem;
+
+      backdrop-filter:
+        blur(10px);
     }
 
-    .about-content h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--navy);
-      margin-bottom: 16px;
+
+    .about-code.one {
+
+      top:
+        18%;
+
+      left:
+        8%;
     }
+
+
+    .about-code.two {
+
+      right:
+        7%;
+
+      bottom:
+        20%;
+    }
+
 
     .about-content p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
+
+      margin-bottom:
+        18px;
+
+      color:
+        var(--muted);
     }
 
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
+
+    .tags {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        8px;
+
+      margin-top:
+        25px;
     }
 
-    .about-tag {
-      background: rgba(232,93,58,0.08);
-      color: var(--terracotta);
-      padding: 8px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
+
+    .tag {
+
+      padding:
+        7px 11px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(255,255,255,.025);
+
+      color:
+        #AAB5C2;
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .63rem;
     }
 
-    .testimonials-section {
-      padding: 100px 0;
-      background: var(--cream);
-      position: relative;
-    }
 
-    .testimonials-banner {
-      width: 100%;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 56px;
-      max-height: 220px;
-      position: relative;
-    }
-
-    .testimonials-banner img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .testimonials-banner-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(26,26,46,0.72) 0%, rgba(232,93,58,0.25) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .testimonials-banner-overlay p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-    }
-
-    .testimonials-banner-overlay strong {
-      color: #fff;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background: #fff;
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 32px;
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      font-family: 'DM Serif Display', serif;
-      font-size: 4rem;
-      color: var(--terracotta);
-      opacity: 0.2;
-      position: absolute;
-      top: 12px;
-      left: 24px;
-      line-height: 1;
-    }
-
-    .testimonial-text {
-      color: var(--text-dark);
-      font-size: 0.95rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .testimonial-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--terracotta), var(--gold));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .testimonial-name {
-      font-weight: 700;
-      color: var(--navy);
-      font-size: 0.92rem;
-    }
-
-    .testimonial-role {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
-
-    .stars {
-      color: var(--gold);
-      font-size: 0.9rem;
-      margin-bottom: 14px;
-      letter-spacing: 2px;
-    }
-
-    .faq-section {
-      padding: 100px 0;
-      background: var(--cream);
-    }
-
-    .faq-list {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border-light);
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 24px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--navy);
-      text-align: left;
-    }
-
-    .faq-icon {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(232,93,58,0.1);
-      color: var(--terracotta);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-      padding-bottom: 24px;
-    }
+    /* =====================================================
+       CTA
+    ====================================================== */
 
     .final-cta {
-      padding: 100px 0;
-      background: var(--navy);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      padding:
+        130px 0;
+
+      text-align:
+        center;
+
+      background:
+        #05080C;
     }
+
 
     .final-cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 50% 50%, rgba(232,93,58,0.08) 0%, transparent 50%);
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        700px;
+
+      height:
+        400px;
+
+      top:
+        -150px;
+
+      left:
+        50%;
+
+      transform:
+        translateX(-50%);
+
+      background:
+        radial-gradient(
+          ellipse,
+          rgba(37,211,102,.12),
+          transparent 70%
+        );
+
+      pointer-events:
+        none;
     }
+
+
+    .final-cta-content {
+
+      position:
+        relative;
+
+      max-width:
+        780px;
+
+      margin:
+        0 auto;
+    }
+
 
     .final-cta h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: #fff;
-      margin-bottom: 16px;
-      position: relative;
+
+      margin-bottom:
+        20px;
+
+      font-size:
+        clamp(
+          2.5rem,
+          6vw,
+          5rem
+        );
+
+      line-height:
+        .98;
+
+      letter-spacing:
+        -.06em;
     }
+
 
     .final-cta p {
-      color: rgba(255,255,255,0.6);
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-      position: relative;
+
+      max-width:
+        650px;
+
+      margin:
+        0 auto 32px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        1rem;
     }
 
-    .final-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--green-wpp);
-      color: #fff;
-      padding: 18px 44px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.15rem;
-      transition: background 0.3s, transform 0.2s;
-      animation: pulse-glow 2s infinite;
-      position: relative;
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+      padding:
+        35px 0;
+
+      border-top:
+        1px solid
+        var(--border);
+
+      background:
+        #04070A;
     }
 
-    .final-cta-btn:hover {
-      background: var(--green-wpp-dark);
-      transform: scale(1.04);
+
+    .footer-inner {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
     }
 
-    .final-cta-sub {
-      margin-top: 16px;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.85rem;
-      position: relative;
+
+    .footer-brand {
+
+      color:
+        var(--muted);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .7rem;
     }
 
-    .footer-lp {
-      background: #111122;
-      padding: 40px 0;
-      text-align: center;
+
+    .footer-social {
+
+      color:
+        var(--green);
+
+      font-family:
+        "JetBrains Mono",
+        monospace;
+
+      font-size:
+        .7rem;
     }
 
-    .footer-lp p {
-      color: rgba(255,255,255,0.3);
-      font-size: 0.85rem;
+
+    /* =====================================================
+       WHATSAPP FLOAT
+    ====================================================== */
+
+    .whatsapp {
+
+      position:
+        fixed;
+
+      right:
+        22px;
+
+      bottom:
+        22px;
+
+      z-index:
+        999;
+
+      width:
+        58px;
+
+      height:
+        58px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green);
+
+      color:
+        #fff;
+
+      box-shadow:
+        0 10px 35px
+        rgba(37,211,102,.3);
+
+      transition:
+        transform var(--transition);
     }
 
-    .footer-lp a {
-      color: var(--terracotta);
-      text-decoration: none;
+
+    .whatsapp:hover {
+
+      transform:
+        scale(1.08)
+        translateY(-2px);
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      background: var(--green-wpp);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: pulse-glow 2s infinite;
-      text-decoration: none;
+
+    .whatsapp svg {
+
+      width:
+        28px;
+
+      height:
+        28px;
+
+      fill:
+        #fff;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-    }
 
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: #fff;
-    }
+    /* =====================================================
+       MOBILE
+    ====================================================== */
 
-    @media (max-width: 900px) {
-      .pain-grid { grid-template-columns: 1fr; }
-      .method-grid { grid-template-columns: 1fr; gap: 36px; }
-      .method-image { order: -1; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-image { max-width: 400px; margin: 0 auto; }
-      .pain-section, .solution-section, .benefits-section,
-      .about-section, .testimonials-section, .faq-section, .final-cta {
-        padding: 64px 0;
+    @media(max-width: 950px) {
+
+      .nav-links {
+        display:
+          none;
+      }
+
+
+      .hero-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          60px;
+      }
+
+
+      .hero h1 {
+        max-width:
+          700px;
+      }
+
+
+      .bento {
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+
+      .roadmap-grid {
+
+        grid-template-columns:
+          repeat(3,1fr);
+
+        gap:
+          20px;
+      }
+
+
+      .roadmap-line {
+        display:
+          none;
+      }
+
+
+      .about-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          50px;
       }
     }
 
-    @media (max-width: 600px) {
-      .container-lp { padding: 0 18px; }
-      .stat-item h3 { font-size: 2rem; }
-      .hero { min-height: auto; padding-top: 72px; }
-      .hero-content { padding: 32px 0 48px; }
-      .hero p { max-width: 100%; font-size: 1.05rem; }
-      .hero-cta-row { flex-direction: column; }
-      .hero-cta, .hero-cta-outline, .final-cta-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 24px;
+
+    @media(max-width: 700px) {
+
+      .container {
+
+        width:
+          calc(100% - 32px);
       }
-      .nav-cta span { display: none; }
-      .nav-cta { padding: 10px 14px; }
-      .section-subtitle { margin-bottom: 32px; }
-      .pain-card, .benefit-card, .testimonial-card { padding: 24px; }
-      .pain-intro-image, .pain-intro-image img { max-height: 220px; height: 220px; }
-      .testimonials-banner, .testimonials-banner img { max-height: 180px; height: 180px; }
-      .about-badge-float { right: 8px; bottom: -12px; padding: 12px 18px; font-size: 0.95rem; }
-      .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
-      .whatsapp-float svg { width: 26px; height: 26px; }
+
+
+      .section {
+
+        padding:
+          80px 0;
+      }
+
+
+      .hero {
+
+        padding:
+          120px 0 70px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(
+            2.8rem,
+            14vw,
+            4.5rem
+          );
+      }
+
+
+      .hero-actions {
+
+        flex-direction:
+          column;
+      }
+
+
+      .btn {
+
+        width:
+          100%;
+      }
+
+
+      .stats-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .stat {
+
+        border-right:
+          0;
+
+        border-bottom:
+          1px solid
+          var(--border);
+      }
+
+
+      .stat:last-child {
+        border-bottom:
+          0;
+      }
+
+
+      .comparison {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .bento {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .bento-card.large,
+      .bento-card.tall {
+
+        grid-column:
+          span 1;
+
+        grid-row:
+          span 1;
+      }
+
+
+      .stack-item {
+
+        grid-template-columns:
+          50px 1fr 30px;
+
+        gap:
+          10px;
+      }
+
+
+      .stack-description {
+        display:
+          none;
+      }
+
+
+      .roadmap-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .roadmap-card {
+        min-height:
+          auto;
+      }
+
+
+      .about-visual {
+        min-height:
+          360px;
+      }
+
+
+      .about-avatar {
+
+        width:
+          150px;
+
+        height:
+          150px;
+
+        font-size:
+          1.5rem;
+      }
+
+
+      .footer-inner {
+
+        flex-direction:
+          column;
+
+        text-align:
+          center;
+      }
+
+
+      .whatsapp {
+
+        right:
+          16px;
+
+        bottom:
+          16px;
+      }
     }
+
+
+    /* =====================================================
+       ACCESSIBILITY
+    ====================================================== */
+
+    :focus-visible {
+
+      outline:
+        2px solid
+        var(--green);
+
+      outline-offset:
+        4px;
+    }
+
+
+    @media(prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+
+        scroll-behavior:
+          auto !important;
+      }
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <nav class="nav-lp">
-    <div class="container-lp nav-inner">
-      <a href="#" class="nav-logo">Teacher <span>Adilson</span></a>
-      <!-- LOFI: CTA de nav trocado de "Aplicar para Sessão R$29" pra convite direto, sem preço -->
-      <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20a%20aula%20gr%C3%A1tis" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-        <span>Aula Grátis</span>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="container navbar-inner">
+
+      <a
+        href="#"
+        class="logo"
+        aria-label="Teacher Adi Tech"
+      >
+        &lt;adi/&gt;<span>.tech</span>
       </a>
-    </div>
-  </nav>
 
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="container-lp hero-content">
-    
-      <h1>Travava em call. <span class="highlight">Hoje não.</span></h1>
-      <p>Professor há 8 anos. Ensino devs a não travar em inglês.</p>
-      <!-- LOFI: removidos R$29 / Diagnóstico / 8 vagas por semana — LoFi não usa preço nem escassez no site -->
-      <div class="hero-cta-row">
-        <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="hero-cta" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-          📄 Baixar PDF: 10 Frases Pra Não Travar em Call
+
+      <nav
+        class="nav-links"
+        aria-label="Navegação principal"
+      >
+
+        <a href="#metodo">
+          Método
         </a>
-        <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20a%20aula%20gr%C3%A1tis" class="hero-cta hero-cta-outline" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
-          Aula Grátis no WhatsApp
+
+        <a href="#roadmap">
+          6 meses
         </a>
-      </div>
-      <p class="hero-sub">Sem spam. Sem pegadinha.</p>
+
+        <a href="#sobre">
+          Sobre
+        </a>
+
+      </nav>
+
+
+      <a
+        href="https://wa.me/5511941949178?text=Oi%20Adi!%20Vim%20pelo%20site%20teacheradi.tech%20e%20quero%20saber%20mais%20sobre%20o%20programa%20de%206%20meses."
+        class="btn btn-primary nav-cta"
+        target="_blank"
+        rel="noopener"
+        data-lead
+      >
+        Começar agora →
+      </a>
+
     </div>
-  </section>
 
-  <!-- LOFI: estatísticas infladas (95% satisfação, 200% aumento salarial) removidas — só ficam números reais e verificáveis -->
-  <section class="stats-bar">
-    <div class="container-lp">
-      <div class="stats-grid">
-        <div class="stat-item fade-in">
-          <h3 data-count="8" data-suffix="+">0</h3>
-          <p>Anos ensinando inglês</p>
-        </div>
-        <div class="stat-item fade-in">
-          <h3 data-count="200" data-suffix="+">0</h3>
-          <p>Devs que treinaram comigo</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </header>
 
-  <section class="pain-section" id="dores">
-    <div class="container-lp">
-      <span class="section-label fade-in">Comigo aconteceu</span>
-      <!-- LOFI: título e cards do briefing — dor específica de dev, não "inglês travando a carreira" genérico -->
-      <h2 class="section-title fade-in">Você trava em inglês <span style="color:var(--terracotta)">quando:</span></h2>
-      <p class="section-subtitle fade-in">Não é falta de inteligência. É falta de prática nas situações que realmente importam.</p>
 
-      <div class="pain-intro-image fade-in">
-        <img
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80&auto=format&fit=crop"
-          alt="Devs em call de trabalho remoto"
-        />
-        <div class="pain-intro-image-overlay"></div>
-      </div>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-      <!-- LOFI: cards simplificados — menos termo técnico específico, mais situação universal de trabalho -->
-      <div class="pain-grid">
-        <div class="pain-card fade-in">
-          <span class="pain-emoji">🥴</span>
-          <h4>Gringo fala rápido demais</h4>
-          <p>Seu cérebro trava tentando traduzir cada palavra e você perde o fio da conversa.</p>
-        </div>
-        <div class="pain-card fade-in">
-          <span class="pain-emoji">🥶</span>
-          <h4>Pergunta em inglês na entrevista</h4>
-          <p>Você sabe a resposta, mas congela. Não é a pergunta que trava — é o idioma.</p>
-        </div>
-        <div class="pain-card fade-in">
-          <span class="pain-emoji">🤐</span>
-          <h4>Call diária</h4>
-          <p>Você fica mudo com medo de errar. Prefere câmera fechada e microfone no mudo.</p>
-        </div>
-        <div class="pain-card fade-in">
-          <span class="pain-emoji">😞</span>
-          <h4>Vaga dos sonhos pede inglês</h4>
-          <p>E você nem aplica. Já perdeu a vaga antes mesmo de tentar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- LOFI: seção de comparação salarial (R$4.200, R$12.500 etc.) removida — nenhum valor em R$ no site -->
+    <section
+      class="hero"
+      id="inicio"
+    >
 
-  <section class="solution-section" id="metodo">
-    <div class="container-lp">
-      <span class="section-label fade-in">Comigo funcionou</span>
-      <!-- LOFI: título/sub exatamente como pedido no briefing -->
-      <h2 class="section-title fade-in">Parei de travar quando parei de <span style="color:var(--terracotta)">traduzir na cabeça</span></h2>
-      <p class="section-subtitle fade-in">Método simples que uso com +200 devs.</p>
-      <div class="method-grid">
-        <div class="method-image fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop"
-            alt="Código na tela de um notebook"
-          />
-        </div>
-        <div>
-          <!-- LOFI: passos simplificados — sem lista de termos técnicos (NULL/DEPLOY/OUTAGE), mais direto -->
-          <div class="method-steps">
-            <div class="step fade-in">
-              <div class="step-number">1</div>
-              <div>
-                <h4>Mapear o que te trava</h4>
-                <p>A gente lista as palavras e situações que travam seu inglês no trabalho.</p>
-              </div>
+      <div class="container">
+
+        <div class="hero-grid">
+
+
+          <!-- HERO COPY -->
+
+          <div>
+
+            <div class="hero-status">
+
+              <span class="status-dot"></span>
+
+              DEVELOPER ENGLISH / ONLINE
+
             </div>
-            <div class="step fade-in">
-              <div class="step-number">2</div>
-              <div>
-                <h4>Pensar em inglês direto</h4>
-                <p>Você para de traduzir mentalmente e passa a pensar direto na língua certa.</p>
-              </div>
+
+
+            <h1>
+
+              Technical English
+
+              <span>
+                for developers.
+              </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+              Você já sabe programar.
+              Agora aprenda a explicar o que faz,
+              participar de reuniões, passar em entrevistas
+              e trabalhar com times internacionais em inglês.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+              <a
+                href="https://wa.me/5511941949178?text=Oi%20Adi!%20Quero%20estar%20pronto%20para%20o%20mercado%20internacional%20em%206%20meses."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+                data-lead
+              >
+                Quero estar pronto em 6 meses →
+              </a>
+
+
+              <a
+                href="#metodo"
+                class="btn btn-secondary"
+              >
+                Conhecer o método
+              </a>
+
             </div>
-            <div class="step fade-in">
-              <div class="step-number">3</div>
-              <div>
-                <h4>Treinar a call de verdade</h4>
-                <p>Simulação real toda semana, do jeito que acontece no seu trabalho.</p>
-              </div>
-            </div>
+
+
+            <p class="hero-note">
+
+              $ npm run international-career
+
+            </p>
+
           </div>
-          <!-- LOFI: CTA do briefing — PDF grátis, não venda -->
-          <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="hero-cta fade-in" style="margin-top:32px;" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-            📄 Quero o PDF com 10 frases pra call
+
+
+          <!-- TERMINAL -->
+
+          <div class="terminal-wrapper">
+
+            <div class="terminal-glow"></div>
+
+
+            <div class="terminal">
+
+              <div class="terminal-header">
+
+                <span class="terminal-dot"></span>
+
+                <span class="terminal-dot"></span>
+
+                <span class="terminal-dot"></span>
+
+                <span class="terminal-title">
+                  developer-english.sh
+                </span>
+
+              </div>
+
+
+              <div class="terminal-body">
+
+                <div class="terminal-line terminal-command">
+                  $ teacher-adi start
+                </div>
+
+
+                <br />
+
+
+                <div class="terminal-line terminal-muted">
+                  &gt; preparing developer...
+                </div>
+
+
+                <div class="terminal-line terminal-green">
+                  ✓ Technical vocabulary
+                </div>
+
+
+                <div class="terminal-line terminal-green">
+                  ✓ International interviews
+                </div>
+
+
+                <div class="terminal-line terminal-green">
+                  ✓ Daily meetings
+                </div>
+
+
+                <div class="terminal-line terminal-green">
+                  ✓ Code reviews
+                </div>
+
+
+                <div class="terminal-line terminal-green">
+                  ✓ Global communication
+                </div>
+
+
+                <br />
+
+
+                <div class="terminal-line terminal-command">
+
+                  STATUS:
+
+                  <span class="terminal-green">
+                    INTERNATIONAL_READY
+                  </span>
+
+                  <span class="cursor"></span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div class="stat">
+
+          <strong>
+            8+
+          </strong>
+
+          <span>
+            anos ensinando inglês
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            200+
+          </strong>
+
+          <span>
+            developers treinados
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            6
+          </strong>
+
+          <span>
+            meses de método
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROBLEM
+    ====================================================== -->
+
+    <section class="section problem">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="eyebrow">
+            THE PROBLEM
+          </span>
+
+
+          <h2 class="section-title">
+
+            Você já sabe
+            <span class="green">
+              programar.
+            </span>
+
+            <br />
+
+            Agora aprenda
+            a falar sobre isso.
+
+          </h2>
+
+
+          <p class="section-description">
+
+            Inglês genérico ensina você a conversar.
+            Inglês técnico prepara você para trabalhar
+            com tecnologia em um ambiente internacional.
+
+          </p>
+
+        </div>
+
+
+        <div class="comparison">
+
+
+          <div class="comparison-card">
+
+            <div class="comparison-label">
+              GENERIC ENGLISH
+            </div>
+
+
+            <div class="question">
+              How are you?
+            </div>
+
+            <div class="question">
+              What's your favorite color?
+            </div>
+
+            <div class="question">
+              Where do you live?
+            </div>
+
+            <div class="question">
+              What did you do yesterday?
+            </div>
+
+          </div>
+
+
+          <div class="comparison-card featured">
+
+            <div class="comparison-label">
+              DEVELOPER ENGLISH
+            </div>
+
+
+            <div class="question">
+              Tell me about your architecture.
+            </div>
+
+            <div class="question">
+              Why did you choose this stack?
+            </div>
+
+            <div class="question">
+              What caused the outage?
+            </div>
+
+            <div class="question">
+              How would you scale this system?
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BENTO GRID
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="metodo"
+    >
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="eyebrow">
+            DEVELOPER ENGLISH STACK
+          </span>
+
+
+          <h2 class="section-title">
+
+            O inglês que um
+            <span class="green">
+              developer
+            </span>
+            realmente usa.
+
+          </h2>
+
+
+          <p class="section-description">
+
+            Você aprende inglês através de situações
+            reais do universo de tecnologia.
+
+          </p>
+
+        </div>
+
+
+        <div class="bento">
+
+
+          <article class="bento-card large">
+
+            <div>
+
+              <div class="bento-icon">
+                01
+              </div>
+
+
+              <h3>
+                International Interviews
+              </h3>
+
+
+              <p>
+
+                Aprenda a explicar sua experiência,
+                projetos, decisões técnicas e raciocínio
+                durante entrevistas internacionais.
+
+              </p>
+
+            </div>
+
+
+            <div class="bento-code">
+
+              interviewer: Tell me about your project.<br />
+
+              candidate: Sure. I was responsible for...
+
+            </div>
+
+          </article>
+
+
+          <article class="bento-card">
+
+            <div>
+
+              <div class="bento-icon">
+                02
+              </div>
+
+
+              <h3>
+                Daily Meetings
+              </h3>
+
+
+              <p>
+                Fale sobre ontem, hoje e blockers
+                sem travar.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="bento-card tall">
+
+            <div>
+
+              <div class="bento-icon">
+                03
+              </div>
+
+
+              <h3>
+                Code Review
+              </h3>
+
+
+              <p>
+
+                Aprenda a sugerir mudanças,
+                discordar profissionalmente e
+                explicar decisões técnicas.
+
+              </p>
+
+            </div>
+
+
+            <div class="bento-code">
+
+              Could you clarify this approach?<br /><br />
+
+              I would suggest changing this because...<br /><br />
+
+              What do you think about...?
+
+            </div>
+
+          </article>
+
+
+          <article class="bento-card">
+
+            <div>
+
+              <div class="bento-icon">
+                04
+              </div>
+
+
+              <h3>
+                Production
+              </h3>
+
+
+              <p>
+                Deploy, rollback, incident,
+                outage e status de produção.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="bento-card">
+
+            <div>
+
+              <div class="bento-icon">
+                05
+              </div>
+
+
+              <h3>
+                Global Teams
+              </h3>
+
+
+              <p>
+                Comunicação profissional com
+                equipes internacionais.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="bento-card large">
+
+            <div>
+
+              <div class="bento-icon">
+                06
+              </div>
+
+
+              <h3>
+                Career English
+              </h3>
+
+
+              <p>
+
+                LinkedIn, networking, apresentações,
+                entrevistas comportamentais e
+                comunicação profissional.
+
+              </p>
+
+            </div>
+
+
+            <div class="bento-code">
+
+              $ career.status<br />
+
+              &gt; global_opportunities: enabled<br />
+
+              &gt; confidence: increasing<br />
+
+              &gt; status: ready
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STACK
+    ====================================================== -->
+
+    <section class="section stack-section">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="eyebrow">
+            WHAT YOU BUILD
+          </span>
+
+
+          <h2 class="section-title">
+
+            Não é sobre decorar
+            <span class="green">
+              inglês.
+            </span>
+
+            É sobre construir
+            confiança.
+
+          </h2>
+
+        </div>
+
+
+        <div class="stack-list">
+
+
+          <div class="stack-item">
+
+            <div class="stack-number">
+              01
+            </div>
+
+
+            <div>
+
+              <div class="stack-name">
+                Communication
+              </div>
+
+              <div class="stack-description">
+                Expresse ideias técnicas com clareza.
+              </div>
+
+            </div>
+
+
+            <div class="stack-arrow">
+              →
+            </div>
+
+          </div>
+
+
+          <div class="stack-item">
+
+            <div class="stack-number">
+              02
+            </div>
+
+
+            <div>
+
+              <div class="stack-name">
+                Technical Vocabulary
+              </div>
+
+              <div class="stack-description">
+                Aprenda o vocabulário utilizado por devs.
+              </div>
+
+            </div>
+
+
+            <div class="stack-arrow">
+              →
+            </div>
+
+          </div>
+
+
+          <div class="stack-item">
+
+            <div class="stack-number">
+              03
+            </div>
+
+
+            <div>
+
+              <div class="stack-name">
+                Meetings
+              </div>
+
+              <div class="stack-description">
+                Daily, planning, retrospective e reuniões.
+              </div>
+
+            </div>
+
+
+            <div class="stack-arrow">
+              →
+            </div>
+
+          </div>
+
+
+          <div class="stack-item">
+
+            <div class="stack-number">
+              04
+            </div>
+
+
+            <div>
+
+              <div class="stack-name">
+                Interviews
+              </div>
+
+              <div class="stack-description">
+                Simulações de entrevistas internacionais.
+              </div>
+
+            </div>
+
+
+            <div class="stack-arrow">
+              →
+            </div>
+
+          </div>
+
+
+          <div class="stack-item">
+
+            <div class="stack-number">
+              05
+            </div>
+
+
+            <div>
+
+              <div class="stack-name">
+                Global Career
+              </div>
+
+              <div class="stack-description">
+                Comunicação para oportunidades internacionais.
+              </div>
+
+            </div>
+
+
+            <div class="stack-arrow">
+              →
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ROADMAP
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="roadmap"
+    >
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="eyebrow">
+            6 MONTH ROADMAP
+          </span>
+
+
+          <h2 class="section-title">
+
+            Seu roadmap para o
+            <span class="green">
+              mercado internacional.
+            </span>
+
+          </h2>
+
+
+          <p class="section-description">
+
+            Um caminho estruturado para desenvolver
+            comunicação, confiança e inglês técnico
+            aplicado ao seu mundo profissional.
+
+          </p>
+
+        </div>
+
+
+        <div class="roadmap">
+
+          <div class="roadmap-line"></div>
+
+
+          <div class="roadmap-grid">
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 01
+                </div>
+
+                <h3>
+                  Foundation
+                </h3>
+
+                <p>
+                  Base de comunicação e construção
+                  de confiança.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 02
+                </div>
+
+                <h3>
+                  Tech English
+                </h3>
+
+                <p>
+                  Vocabulário e situações técnicas.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 03
+                </div>
+
+                <h3>
+                  Meetings
+                </h3>
+
+                <p>
+                  Daily, planning, retro e comunicação.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 04
+                </div>
+
+                <h3>
+                  Interviews
+                </h3>
+
+                <p>
+                  Simulações de entrevistas técnicas.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 05
+                </div>
+
+                <h3>
+                  Global Team
+                </h3>
+
+                <p>
+                  Comunicação profissional internacional.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+              <div class="roadmap-dot"></div>
+
+              <div class="roadmap-card">
+
+                <div class="roadmap-month">
+                  MONTH 06
+                </div>
+
+                <h3>
+                  Career Ready
+                </h3>
+
+                <p>
+                  Preparação para oportunidades globais.
+                </p>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section
+      class="section about"
+      id="sobre"
+    >
+
+      <div class="container about-grid">
+
+
+        <div class="about-visual">
+
+          <div class="about-code one">
+            &lt;teacher&gt;<br />
+            &nbsp;&nbsp;8+ years<br />
+            &lt;/teacher&gt;
+          </div>
+
+
+          <div class="about-avatar">
+            &lt;adi/&gt;
+          </div>
+
+
+          <div class="about-code two">
+            developer + english<br />
+            status: online
+          </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+          <span class="eyebrow">
+            WHO IS TEACHER ADI
+          </span>
+
+
+          <h2 class="section-title">
+
+            Professor de inglês.
+            <span class="green">
+              Estudante de TI.
+            </span>
+
+          </h2>
+
+
+          <p>
+
+            Eu não ensino programação.
+            Eu ensino o inglês técnico que você
+            precisa para falar sobre programação,
+            tecnologia e sua carreira.
+
+          </p>
+
+
+          <p>
+
+            Durante anos ensinando inglês,
+            percebi que muitos profissionais de tecnologia
+            não têm dificuldade com a parte técnica.
+
+            O problema aparece quando precisam
+            explicar aquilo que sabem em inglês.
+
+          </p>
+
+
+          <p>
+
+            Por isso, o método une inglês,
+            tecnologia e situações reais do mercado
+            internacional.
+
+          </p>
+
+
+          <div class="tags">
+
+            <span class="tag">
+              TECH ENGLISH
+            </span>
+
+            <span class="tag">
+              DEVELOPERS
+            </span>
+
+            <span class="tag">
+              INTERVIEWS
+            </span>
+
+            <span class="tag">
+              GLOBAL CAREER
+            </span>
+
+            <span class="tag">
+              8+ YEARS
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <div class="final-cta-content">
+
+          <span class="eyebrow">
+            READY TO GO GLOBAL?
+          </span>
+
+
+          <h2>
+
+            Seu próximo
+            <span class="green">
+              deploy
+            </span>
+            pode ser internacional.
+
+          </h2>
+
+
+          <p>
+
+            Pare de deixar oportunidades internacionais
+            de lado por causa do inglês.
+
+            Aprenda a falar sobre tecnologia,
+            participar de reuniões e enfrentar
+            entrevistas com mais confiança.
+
+          </p>
+
+
+          <a
+            href="https://wa.me/5511941949178?text=Oi%20Adi!%20Quero%20estar%20pronto%20para%20o%20mercado%20internacional%20em%206%20meses."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+            data-lead
+          >
+
+            Quero começar minha jornada →
+
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="benefits-section" id="beneficios">
-    <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Como eu ensino</span>
-      <!-- LOFI: linguagem de "professor particular" trocada por tom de amigo, foco no travamento específico -->
-      <h2 class="section-title fade-in">Nada de <span style="color:var(--terracotta)">escola genérica</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Aula pensada pro seu travamento específico, não pra apostila.</p>
-      <div class="benefits-grid">
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">🎯</div>
-          <h4>Focado em call, não em prova</h4>
-          <p>Cada aula mira o que te trava: reunião, entrevista, conversa do dia a dia. Nada de gramática decorada.</p>
         </div>
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">⏰</div>
-          <h4>Horário que encaixa</h4>
-          <p>Antes ou depois do expediente, no almoço. Você escolhe.</p>
-        </div>
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">💻</div>
-          <h4>100% online</h4>
-          <p>Aula por vídeo, no seu setup. Sem deslocamento, sem desculpa.</p>
-        </div>
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">💬</div>
-          <h4>WhatsApp aberto</h4>
-          <p>Travou numa call e quer tirar uma dúvida na hora? Me chama.</p>
-        </div>
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">📈</div>
-          <h4>Você sente a diferença</h4>
-          <p>Sem relatório bonito. Você mesmo percebe quando para de travar.</p>
-        </div>
-        <div class="benefit-card fade-in">
-          <div class="benefit-icon">🤝</div>
-          <h4>Erra à vontade</h4>
-          <p>Aqui ninguém tira sarro do seu inglês travado. Errar faz parte.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="about-section" id="sobre">
-    <div class="container-lp">
-      <div class="about-grid">
-        <div class="about-image fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80&auto=format&fit=crop"
-            alt="Mentoria de inglês técnico entre devs"
-          />
-          <div class="about-badge-float">+8 anos</div>
-        </div>
-        <div class="about-content fade-in">
-          <span class="section-label">Sobre mim</span>
-          <!-- LOFI: título e texto exatamente como pedido — vulnerabilidade antes da credencial -->
-          <h2>Eu travava. Hoje não.</h2>
-          <p>Já falava inglês. Mas na TI, travava em call. Traduzia "deployment" como implantação e bugava. Passei 6 meses assim.</p>
-          <p>Quando parei de traduzir na cabeça, parei de travar.</p>
-          <p>Hoje sou Professor há 8 anos, Estudante de TI, Meta Pro Team. Ensino devs a fazerem o mesmo.</p>
-          <!-- LOFI: tags simplificadas — menos jargão técnico, mais direto -->
-          <div class="about-tags">
-            <span class="about-tag">Business English</span>
-            <span class="about-tag">Entrevistas</span>
-            <span class="about-tag">Reuniões de Trabalho</span>
-            <span class="about-tag">Conversação</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials-section" id="depoimentos">
-    <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Depoimentos</span>
-      <!-- LOFI: profissões trocadas por cargos de dev, foco em call/entrevista/promoção, sem citar empresa -->
-      <h2 class="section-title fade-in">Devs que <span style="color:var(--terracotta)">pararam de travar</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Histórias reais de quem treinou comigo.</p>
-
-      <div class="testimonials-banner fade-in">
-        <img
-          src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?w=1400&q=80&auto=format&fit=crop"
-          alt="Time de devs em reunião"
-        />
-        <div class="testimonials-banner-overlay">
-          <strong>+200 devs já treinaram comigo</strong>
-          <p>e pararam de travar em call</p>
-        </div>
       </div>
 
-      <!-- LOFI: depoimentos simplificados — sem gíria interna (daily, L2), linguagem mais direta -->
-      <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Treinei pra falar inglês em call de trabalho com o Adilson. Passei na entrevista em inglês e fechei a vaga."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">CA</div>
-            <div>
-              <div class="testimonial-name">Camila A.</div>
-              <div class="testimonial-role">Dev Backend</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Não travo mais nas reuniões em inglês. Antes ficava mudo com medo de errar, hoje falo sem pensar duas vezes."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">RL</div>
-            <div>
-              <div class="testimonial-name">Rafael L.</div>
-              <div class="testimonial-role">Analista de TI</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Fui promovida depois que parei de travar nas calls em inglês com o time de fora."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JS</div>
-            <div>
-              <div class="testimonial-name">Juliana S.</div>
-              <div class="testimonial-role">Líder de Equipe</div>
-            </div>
-          </div>
-        </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        &lt;adi/&gt;.tech © 2026
+
       </div>
-    </div>
-  </section>
 
-  <!-- LOFI: seção de investimento removida (R$29, Sessão Estratégica, Diagnóstico, vagas limitadas) — preço só na DM, nunca no site -->
 
-  <section class="faq-section" id="faq">
-    <div class="container-lp" style="text-align:center;">
-      <span class="section-label fade-in">Dúvidas frequentes</span>
-      <h2 class="section-title fade-in">Perguntas <span style="color:var(--terracotta)">frequentes</span></h2>
-      <p class="section-subtitle fade-in" style="margin:0 auto 50px;">Tudo que você precisa saber antes de começar.</p>
-      <div class="faq-list" style="text-align:left;">
-        <div class="faq-item">
-          <button class="faq-question">
-            Nunca estudei inglês técnico. Dá pra começar do zero?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Sim. A maioria dos devs que treino começa sem vocabulário técnico nenhum. A gente monta isso junto, do zero.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Preciso ter inglês avançado pra começar?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Não. Muita gente trava justamente porque acha que precisa estar "pronta" antes de começar. A gente parte de onde você está.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            As aulas são online?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Sim, 100% online, ao vivo. Você entra numa call comigo do mesmo jeito que entraria numa call de trabalho — só que sem a pressão.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Quanto tempo leva pra eu parar de travar?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Varia de pessoa pra pessoa. Mas a maioria já sente diferença nas primeiras semanas, treinando as situações reais em que trava.</div>
-        </div>
-        <!-- LOFI: preço tirado do site — regra "preço só na DM" -->
-        <div class="faq-item">
-          <button class="faq-question">
-            Quanto custa?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">Isso a gente conversa no WhatsApp — depende do seu momento e objetivo. Me chama que te explico certinho.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <a
+        href="https://instagram.com/teacheradi.tech"
+        target="_blank"
+        rel="noopener"
+        class="footer-social"
+      >
 
-  <section class="final-cta">
-    <div class="container-lp">
-      <!-- LOFI: título/sub/botão/subtexto exatamente como pedido no briefing -->
-      <h2 class="fade-in">Pronto pra <span style="color:var(--terracotta)">parar de travar</span> em call?</h2>
-      <p class="fade-in">Baixa o PDF grátis: 10 Frases Que Me Salvaram em Call</p>
-      <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20o%20PDF%20com%20as%2010%20frases%20pra%20n%C3%A3o%20travar%20em%20call" class="final-cta-btn" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-        📄 Quero Parar de Travar - PDF Grátis
+        @teacheradi.tech
+
       </a>
-      <p class="final-cta-sub fade-in">Sem spam. Sem pegadinha. Só conteúdo que uso no Meta Pro Team.</p>
-    </div>
-  </section>
 
-  <footer class="footer-lp">
-    <div class="container-lp">
-      <p>Teacher Adilson &copy; 2026 &mdash; Todos os direitos reservados</p>
-      <!-- LOFI: linha de footer exatamente como pedido -->
-      <p style="margin-top:8px;"><a href="https://instagram.com/adilson_holandez" target="_blank" rel="noopener">@adilson_holandez</a> | Professor Tech English</p>
     </div>
+
   </footer>
 
-  <a href="https://wa.me/5511941949178?text=Oi%20Adilson!%20Vim%20pelo%20site.%20Quero%20parar%20de%20travar%20em%20call" class="whatsapp-float" target="_blank" rel="noopener" onclick="if(typeof fbq==='function'){fbq('track','Lead');}">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+
+  <!-- =====================================================
+       WHATSAPP FLOAT
+  ====================================================== -->
+
+  <a
+    href="https://wa.me/5511941949178?text=Oi%20Adi!%20Vim%20pelo%20site%20teacheradi.tech."
+    class="whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com Teacher Adi pelo WhatsApp"
+    data-lead
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.198-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L.057 23.97l6.266-1.446A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.72.858.882-3.614-.235-.372A9.818 9.818 0 1112 21.818z"/>
+
+    </svg>
+
   </a>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
 
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    /* =====================================================
+       NAVBAR SCROLL
+    ====================================================== */
 
-      document.querySelectorAll('.fade-in').forEach(function (el) {
-        observer.observe(el);
-      });
+    const navbar =
+      document.getElementById("navbar");
 
-      var counterObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var el = entry.target;
-            var target = parseInt(el.getAttribute('data-count') || '0');
-            var suffix = el.getAttribute('data-suffix') || '';
-            var current = 0;
-            var increment = target / 60;
-            var timer = setInterval(function () {
-              current += increment;
-              if (current >= target) {
-                current = target;
-                clearInterval(timer);
-              }
-              el.textContent = Math.floor(current) + suffix;
-            }, 20);
-            counterObserver.unobserve(el);
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (window.scrollY > 30) {
+
+          navbar.classList.add(
+            "scrolled"
+          );
+
+        } else {
+
+          navbar.classList.remove(
+            "scrolled"
+          );
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    /* =====================================================
+       META PIXEL - LEAD
+    ====================================================== */
+
+    document
+      .querySelectorAll("[data-lead]")
+      .forEach((button) => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            if (
+              typeof fbq === "function"
+            ) {
+
+              fbq(
+                "track",
+                "Lead"
+              );
+
+            }
+
           }
-        });
-      }, { threshold: 0.5 });
+        );
 
-      document.querySelectorAll('[data-count]').forEach(function (el) {
-        counterObserver.observe(el);
       });
 
-      document.querySelectorAll('.faq-question').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var item = btn.parentElement;
-          var isOpen = item.classList.contains('open');
-          document.querySelectorAll('.faq-item').forEach(function (i) {
-            i.classList.remove('open');
-          });
-          if (!isOpen) item.classList.add('open');
-        });
-      });
 
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          var href = anchor.getAttribute('href');
-          if (href) {
-            var target = document.querySelector(href);
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        'a[href^="#"]'
+      )
+      .forEach((link) => {
+
+        link.addEventListener(
+          "click",
+          (event) => {
+
+            const targetId =
+              link.getAttribute("href");
+
+            if (
+              targetId === "#"
+            ) return;
+
+
+            const target =
+              document.querySelector(
+                targetId
+              );
+
+
+            if (target) {
+
+              event.preventDefault();
+
+              target.scrollIntoView({
+                behavior:
+                  "smooth",
+                block:
+                  "start"
+              });
+
+            }
+
           }
-        });
+        );
+
       });
 
-    });
+
+    /* =====================================================
+       BENTO CARD - MICRO INTERACTION
+    ====================================================== */
+
+    document
+      .querySelectorAll(".bento-card")
+      .forEach((card) => {
+
+        card.addEventListener(
+          "mousemove",
+          (event) => {
+
+            const rect =
+              card.getBoundingClientRect();
+
+            const x =
+              event.clientX -
+              rect.left;
+
+            const y =
+              event.clientY -
+              rect.top;
+
+            const rotateX =
+              ((y / rect.height) - .5) * -2;
+
+            const rotateY =
+              ((x / rect.width) - .5) * 2;
+
+            card.style.transform =
+              `
+                perspective(800px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-5px)
+              `;
+
+          }
+        );
+
+
+        card.addEventListener(
+          "mouseleave",
+          () => {
+
+            card.style.transform =
+              "";
+
+          }
+        );
+
+      });
+
   </script>
 
 </body>
 </html>
+```
